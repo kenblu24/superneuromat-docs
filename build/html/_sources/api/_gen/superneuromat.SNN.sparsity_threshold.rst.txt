@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.sparsity\_threshold
+=====================================
+
+.. currentmodule:: superneuromat
+
+.. autoattribute:: SNN.sparsity_threshold

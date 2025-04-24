@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.reset
+=======================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.reset

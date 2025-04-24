@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.stdp\_time\_steps
+===================================
+
+.. currentmodule:: superneuromat
+
+.. autoproperty:: SNN.stdp_time_steps

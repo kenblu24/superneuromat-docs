@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.stdp\_info
+============================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.stdp_info

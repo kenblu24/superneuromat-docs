@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.copy
+======================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.copy

@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.num\_synapses
+===============================
+
+.. currentmodule:: superneuromat
+
+.. autoproperty:: SNN.num_synapses

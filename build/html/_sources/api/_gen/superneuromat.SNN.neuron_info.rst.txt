@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.neuron\_info
+==============================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.neuron_info

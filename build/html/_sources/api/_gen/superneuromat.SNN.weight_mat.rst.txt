@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.weight\_mat
+=============================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.weight_mat

@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.jit\_threshold
+================================
+
+.. currentmodule:: superneuromat
+
+.. autoattribute:: SNN.jit_threshold

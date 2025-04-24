@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.create\_neuron
+================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.create_neuron

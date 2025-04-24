@@ -1,0 +1,19 @@
+﻿superneuromat.neuromorphicmodel
+===============================
+
+.. automodule:: superneuromat.neuromorphicmodel
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      check_gpu
+      check_numba
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      SNN
+   

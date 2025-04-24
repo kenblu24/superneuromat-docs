@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.clear\_spike\_train
+=====================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.clear_spike_train

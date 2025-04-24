@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.add\_spike
+============================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.add_spike

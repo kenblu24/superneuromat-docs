@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.simulate\_gpu
+===============================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.simulate_gpu

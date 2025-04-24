@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.stdp\_enabled\_sparse
+=======================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.stdp_enabled_sparse

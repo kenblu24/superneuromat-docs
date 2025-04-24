@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.clear\_memos
+==============================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.clear_memos

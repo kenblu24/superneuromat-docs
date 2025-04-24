@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.zero\_neuron\_states
+======================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.zero_neuron_states

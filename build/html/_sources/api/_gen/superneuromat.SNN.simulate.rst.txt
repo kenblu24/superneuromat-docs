@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.simulate
+==========================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.simulate

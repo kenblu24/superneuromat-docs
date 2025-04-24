@@ -1,0 +1,15 @@
+﻿superneuromat.util
+==================
+
+.. automodule:: superneuromat.util
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      getenvbool
+      is_intlike
+      pretty_spike_train
+      print_spike_train
+   

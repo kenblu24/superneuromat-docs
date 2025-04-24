@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.sparse
+========================
+
+.. currentmodule:: superneuromat
+
+.. autoproperty:: SNN.sparse

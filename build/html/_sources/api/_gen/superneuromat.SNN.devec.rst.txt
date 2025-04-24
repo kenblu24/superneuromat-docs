@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.devec
+=======================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.devec

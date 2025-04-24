@@ -1,0 +1,22 @@
+﻿superneuromat.accessor\_classes.NeuronList
+==========================================
+
+.. currentmodule:: superneuromat.accessor_classes
+
+.. autoclass:: NeuronList
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~NeuronList.__init__
+   
+   
+
+   
+   
+   

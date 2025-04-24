@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.get\_weights\_df
+==================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.get_weights_df

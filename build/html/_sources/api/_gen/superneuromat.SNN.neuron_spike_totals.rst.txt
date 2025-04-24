@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.neuron\_spike\_totals
+=======================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.neuron_spike_totals

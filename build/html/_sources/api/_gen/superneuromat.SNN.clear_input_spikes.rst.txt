@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.clear\_input\_spikes
+======================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.clear_input_spikes

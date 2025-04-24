@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.print\_spike\_train
+=====================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.print_spike_train

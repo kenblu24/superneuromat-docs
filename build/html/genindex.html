@@ -1,0 +1,823 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; SuperNeuroMAT</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e3d8e547" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=20623aea"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=6dbb43f8"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Apr 23, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SuperNeuroMAT</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="guide/install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="devel/index.html">
+    Development
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/kenblu24/superneuromat" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="guide/install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api/index.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="devel/index.html">
+    Development
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/kenblu24/superneuromat" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#J"><strong>J</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ | <a href="#Z"><strong>Z</strong></a>
+ 
+</div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.accessor_classes.NeuronList.html#superneuromat.accessor_classes.NeuronList.__init__">__init__() (superneuromat.accessor_classes.NeuronList method)</a>
+
+      <ul>
+        <li><a href="api/_gen/superneuromat.accessor_classes.SynapseList.html#superneuromat.accessor_classes.SynapseList.__init__">(superneuromat.accessor_classes.SynapseList method)</a>
+</li>
+        <li><a href="api/SNN.html#superneuromat.SNN.__init__">(superneuromat.SNN method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/Neuron.html#superneuromat.Neuron.add_spike">add_spike() (superneuromat.Neuron method)</a>
+
+      <ul>
+        <li><a href="api/_gen/superneuromat.SNN.add_spike.html#superneuromat.SNN.add_spike">(superneuromat.SNN method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.backend.html#superneuromat.SNN.backend">backend (superneuromat.SNN property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.clear_input_spikes.html#superneuromat.SNN.clear_input_spikes">clear_input_spikes() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.clear_memos.html#superneuromat.SNN.clear_memos">clear_memos() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.clear_spike_train.html#superneuromat.SNN.clear_spike_train">clear_spike_train() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/Neuron.html#superneuromat.Neuron.connect_child">connect_child() (superneuromat.Neuron method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/Neuron.html#superneuromat.Neuron.connect_parent">connect_parent() (superneuromat.Neuron method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.consume_input_spikes.html#superneuromat.SNN.consume_input_spikes">consume_input_spikes() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.copy.html#superneuromat.SNN.copy">copy() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.create_neuron.html#superneuromat.SNN.create_neuron">create_neuron() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.create_synapse.html#superneuromat.SNN.create_synapse">create_synapse() (superneuromat.SNN method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/Synapse.html#superneuromat.Synapse.delay">delay (superneuromat.Synapse property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.devec.html#superneuromat.SNN.devec">devec() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.disable_performance_warnings.html#superneuromat.SNN.disable_performance_warnings">disable_performance_warnings (superneuromat.SNN attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.eqvars.html#superneuromat.SNN.eqvars">eqvars (superneuromat.SNN attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.get_input_spikes_df.html#superneuromat.SNN.get_input_spikes_df">get_input_spikes_df() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.get_neuron_df.html#superneuromat.SNN.get_neuron_df">get_neuron_df() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.get_stdp_enabled_df.html#superneuromat.SNN.get_stdp_enabled_df">get_stdp_enabled_df() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.get_synapse.html#superneuromat.SNN.get_synapse">get_synapse() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.get_synapse_df.html#superneuromat.SNN.get_synapse_df">get_synapse_df() (superneuromat.SNN method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.get_synapse_id.html#superneuromat.SNN.get_synapse_id">get_synapse_id() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.get_synapses_by_post.html#superneuromat.SNN.get_synapses_by_post">get_synapses_by_post() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.get_synapses_by_pre.html#superneuromat.SNN.get_synapses_by_pre">get_synapses_by_pre() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.get_weights_df.html#superneuromat.SNN.get_weights_df">get_weights_df() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.util.html#superneuromat.util.getenvbool">getenvbool() (in module superneuromat.util)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.gpu_threshold.html#superneuromat.SNN.gpu_threshold">gpu_threshold (superneuromat.SNN attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/Neuron.html#superneuromat.Neuron.idx">idx (superneuromat.Neuron attribute)</a>
+
+      <ul>
+        <li><a href="api/Synapse.html#superneuromat.Synapse.idx">(superneuromat.Synapse attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/Neuron.html#superneuromat.Neuron.info">info() (superneuromat.Neuron method)</a>
+
+      <ul>
+        <li><a href="api/Synapse.html#superneuromat.Synapse.info">(superneuromat.Synapse method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/Neuron.html#superneuromat.Neuron.info_row">info_row() (superneuromat.Neuron method)</a>
+
+      <ul>
+        <li><a href="api/Synapse.html#superneuromat.Synapse.info_row">(superneuromat.Synapse method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.input_spikes_info.html#superneuromat.SNN.input_spikes_info">input_spikes_info() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.util.html#superneuromat.util.is_intlike">is_intlike() (in module superneuromat.util)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.is_sparse.html#superneuromat.SNN.is_sparse">is_sparse (superneuromat.SNN property)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.ispikes.html#superneuromat.SNN.ispikes">ispikes (superneuromat.SNN property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="J">J</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.jit_threshold.html#superneuromat.SNN.jit_threshold">jit_threshold (superneuromat.SNN attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.last_used_backend.html#superneuromat.SNN.last_used_backend">last_used_backend() (superneuromat.SNN method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/Neuron.html#superneuromat.Neuron.leak">leak (superneuromat.Neuron property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.memoize.html#superneuromat.SNN.memoize">memoize() (superneuromat.SNN method)</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="api/_gen/superneuromat.neuromorphicmodel.html#module-superneuromat.neuromorphicmodel">superneuromat.neuromorphicmodel</a>
+</li>
+        <li><a href="api/_gen/superneuromat.util.html#module-superneuromat.util">superneuromat.util</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/Neuron.html#superneuromat.Neuron">Neuron (class in superneuromat)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.neuron_info.html#superneuromat.SNN.neuron_info">neuron_info() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.neuron_spike_totals.html#superneuromat.SNN.neuron_spike_totals">neuron_spike_totals() (superneuromat.SNN method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.accessor_classes.NeuronList.html#superneuromat.accessor_classes.NeuronList">NeuronList (class in superneuromat.accessor_classes)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.num_neurons.html#superneuromat.SNN.num_neurons">num_neurons (superneuromat.SNN property)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.num_synapses.html#superneuromat.SNN.num_synapses">num_synapses (superneuromat.SNN property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/Synapse.html#superneuromat.Synapse.post">post (superneuromat.Synapse property)</a>
+</li>
+      <li><a href="api/Synapse.html#superneuromat.Synapse.post_id">post_id (superneuromat.Synapse property)</a>
+</li>
+      <li><a href="api/Synapse.html#superneuromat.Synapse.pre">pre (superneuromat.Synapse property)</a>
+</li>
+      <li><a href="api/Synapse.html#superneuromat.Synapse.pre_id">pre_id (superneuromat.Synapse property)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.pretty.html#superneuromat.SNN.pretty">pretty() (superneuromat.SNN method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.pretty_print.html#superneuromat.SNN.pretty_print">pretty_print() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.util.html#superneuromat.util.pretty_spike_train">pretty_spike_train() (in module superneuromat.util)</a>
+
+      <ul>
+        <li><a href="api/_gen/superneuromat.SNN.pretty_spike_train.html#superneuromat.SNN.pretty_spike_train">(superneuromat.SNN method)</a>
+</li>
+      </ul></li>
+      <li><a href="api/_gen/superneuromat.util.html#superneuromat.util.print_spike_train">print_spike_train() (in module superneuromat.util)</a>
+
+      <ul>
+        <li><a href="api/_gen/superneuromat.SNN.print_spike_train.html#superneuromat.SNN.print_spike_train">(superneuromat.SNN method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.recommend.html#superneuromat.SNN.recommend">recommend() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.recommend_sparsity.html#superneuromat.SNN.recommend_sparsity">recommend_sparsity() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/Neuron.html#superneuromat.Neuron.refractory_period">refractory_period (superneuromat.Neuron property)</a>
+</li>
+      <li><a href="api/Neuron.html#superneuromat.Neuron.refractory_state">refractory_state (superneuromat.Neuron property)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.release_mem.html#superneuromat.SNN.release_mem">release_mem() (superneuromat.SNN method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.reset.html#superneuromat.SNN.reset">reset() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.reset_neuron_states.html#superneuromat.SNN.reset_neuron_states">reset_neuron_states() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.reset_refractory_periods.html#superneuromat.SNN.reset_refractory_periods">reset_refractory_periods() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/Neuron.html#superneuromat.Neuron.reset_state">reset_state (superneuromat.Neuron property)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.restore.html#superneuromat.SNN.restore">restore() (superneuromat.SNN method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.set_stdp_enabled_from_mat.html#superneuromat.SNN.set_stdp_enabled_from_mat">set_stdp_enabled_from_mat() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.set_weights_from_mat.html#superneuromat.SNN.set_weights_from_mat">set_weights_from_mat() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.setup.html#superneuromat.SNN.setup">setup() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.setup_input_spikes.html#superneuromat.SNN.setup_input_spikes">setup_input_spikes() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.short.html#superneuromat.SNN.short">short() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.simulate.html#superneuromat.SNN.simulate">simulate() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.simulate_cpu.html#superneuromat.SNN.simulate_cpu">simulate_cpu() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.simulate_cpu_jit.html#superneuromat.SNN.simulate_cpu_jit">simulate_cpu_jit() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.simulate_gpu.html#superneuromat.SNN.simulate_gpu">simulate_gpu() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/SNN.html#superneuromat.SNN">SNN (class in superneuromat)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.sparse.html#superneuromat.SNN.sparse">sparse (superneuromat.SNN property)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.sparsity_threshold.html#superneuromat.SNN.sparsity_threshold">sparsity_threshold (superneuromat.SNN attribute)</a>
+</li>
+      <li><a href="api/Neuron.html#superneuromat.Neuron.spikes">spikes (superneuromat.Neuron property)</a>
+</li>
+      <li><a href="api/Neuron.html#superneuromat.Neuron.spikes_str">spikes_str() (superneuromat.Neuron method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/Neuron.html#superneuromat.Neuron.state">state (superneuromat.Neuron property)</a>
+</li>
+      <li><a href="api/Synapse.html#superneuromat.Synapse.stdp_enabled">stdp_enabled (superneuromat.Synapse property)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.stdp_enabled_mat.html#superneuromat.SNN.stdp_enabled_mat">stdp_enabled_mat() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.stdp_enabled_sparse.html#superneuromat.SNN.stdp_enabled_sparse">stdp_enabled_sparse() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.stdp_info.html#superneuromat.SNN.stdp_info">stdp_info() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.stdp_setup.html#superneuromat.SNN.stdp_setup">stdp_setup() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.stdp_time_steps.html#superneuromat.SNN.stdp_time_steps">stdp_time_steps (superneuromat.SNN property)</a>
+</li>
+      <li>
+    superneuromat.neuromorphicmodel
+
+      <ul>
+        <li><a href="api/_gen/superneuromat.neuromorphicmodel.html#module-superneuromat.neuromorphicmodel">module</a>
+</li>
+      </ul></li>
+      <li>
+    superneuromat.util
+
+      <ul>
+        <li><a href="api/_gen/superneuromat.util.html#module-superneuromat.util">module</a>
+</li>
+      </ul></li>
+      <li><a href="api/Synapse.html#superneuromat.Synapse">Synapse (class in superneuromat)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.synapse_info.html#superneuromat.SNN.synapse_info">synapse_info() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.accessor_classes.SynapseList.html#superneuromat.accessor_classes.SynapseList">SynapseList (class in superneuromat.accessor_classes)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/Neuron.html#superneuromat.Neuron.threshold">threshold (superneuromat.Neuron property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.unmemoize.html#superneuromat.SNN.unmemoize">unmemoize() (superneuromat.SNN method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.weight_mat.html#superneuromat.SNN.weight_mat">weight_mat() (superneuromat.SNN method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.weight_sparsity.html#superneuromat.SNN.weight_sparsity">weight_sparsity() (superneuromat.SNN method)</a>
+</li>
+      <li><a href="api/_gen/superneuromat.SNN.weights_sparse.html#superneuromat.SNN.weights_sparse">weights_sparse() (superneuromat.SNN method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Z">Z</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.zero_neuron_states.html#superneuromat.SNN.zero_neuron_states">zero_neuron_states() (superneuromat.SNN method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/_gen/superneuromat.SNN.zero_refractory_periods.html#superneuromat.SNN.zero_refractory_periods">zero_refractory_periods() (superneuromat.SNN method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Prasanna Date, Chathika Gunaratne, Shruti Kulkarni, Robert Patton, Mark Coletti.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last built Apr 23, 2025.
+  <br/>
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

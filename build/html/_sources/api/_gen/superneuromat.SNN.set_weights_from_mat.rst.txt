@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.set\_weights\_from\_mat
+=========================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.set_weights_from_mat

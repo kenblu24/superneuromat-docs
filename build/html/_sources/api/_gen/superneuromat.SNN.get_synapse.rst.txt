@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.get\_synapse
+==============================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.get_synapse

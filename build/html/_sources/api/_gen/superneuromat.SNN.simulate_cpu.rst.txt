@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.simulate\_cpu
+===============================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.simulate_cpu

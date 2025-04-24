@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.release\_mem
+==============================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.release_mem

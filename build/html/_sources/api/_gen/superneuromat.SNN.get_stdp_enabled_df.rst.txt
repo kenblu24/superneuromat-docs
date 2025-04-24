@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.get\_stdp\_enabled\_df
+========================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.get_stdp_enabled_df

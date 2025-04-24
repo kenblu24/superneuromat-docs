@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.input\_spikes\_info
+=====================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.input_spikes_info

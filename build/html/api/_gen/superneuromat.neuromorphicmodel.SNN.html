@@ -1,0 +1,1018 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>superneuromat.neuromorphicmodel.SNN &#8212; SuperNeuroMAT</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e3d8e547" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=aaadad1f"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/_gen/superneuromat.neuromorphicmodel.SNN';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="superneuromat.accessor_classes.Neuron" href="superneuromat.accessor_classes.Neuron.html" />
+    <link rel="prev" title="API Reference" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Apr 23, 2025"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">SuperNeuroMAT</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/kenblu24/superneuromat" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/install.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    API Reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/kenblu24/superneuromat" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">superneuromat.neuromorphicmodel.SNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superneuromat.accessor_classes.Neuron.html">superneuromat.accessor_classes.Neuron</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superneuromat.accessor_classes.NeuronList.html">superneuromat.accessor_classes.NeuronList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superneuromat.accessor_classes.Synapse.html">superneuromat.accessor_classes.Synapse</a></li>
+<li class="toctree-l1"><a class="reference internal" href="superneuromat.accessor_classes.SynapseList.html">superneuromat.accessor_classes.SynapseList</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">superneuromat.neuromorphicmodel.SNN</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="superneuromat-neuromorphicmodel-snn">
+<h1>superneuromat.neuromorphicmodel.SNN<a class="headerlink" href="#superneuromat-neuromorphicmodel-snn" title="Link to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="superneuromat.neuromorphicmodel.SNN">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">superneuromat.neuromorphicmodel.</span></span><span class="sig-name descname"><span class="pre">SNN</span></span><a class="reference external" href="https://github.com/kenblu24/superneuromat/blob/docs-live/src/superneuromat/neuromorphicmodel.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#superneuromat.neuromorphicmodel.SNN" title="Link to this definition">#</a></dt>
+<dd><p>Defines a spiking neural network with neurons and synapses</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_neurons</strong> (<em>int</em>) – The number of neurons in the SNN.</p></li>
+<li><p><strong>neurons</strong> (<a class="reference internal" href="superneuromat.accessor_classes.NeuronList.html#superneuromat.accessor_classes.NeuronList" title="superneuromat.accessor_classes.NeuronList"><em>NeuronList</em></a>) – List of neurons in the SNN.</p></li>
+<li><p><strong>num_synapses</strong> (<em>int</em>) – The number of synapses in the SNN.</p></li>
+<li><p><strong>synapses</strong> (<a class="reference internal" href="superneuromat.accessor_classes.SynapseList.html#superneuromat.accessor_classes.SynapseList" title="superneuromat.accessor_classes.SynapseList"><em>SynapseList</em></a>) – List of synapses in the SNN.</p></li>
+<li><p><strong>spike_train</strong> (<em>list</em>) – List of output spike trains for each time step. Index by <code class="docutils literal notranslate"><span class="pre">spike_train[t][neuron_id]</span></code>.</p></li>
+<li><p><strong>stdp</strong> (<em>bool</em>) – if <code class="docutils literal notranslate"><span class="pre">stdp</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, STDP will be disabled globally.</p></li>
+<li><p><strong>apos</strong> (<em>list</em>) – List of STDP parameters per time step for excitatory update of weights.</p></li>
+<li><p><strong>aneg</strong> (<em>list</em>) – List of STDP parameters per time step for inhibitory update of weights.</p></li>
+<li><p><strong>stdp_positive_update</strong> (<em>bool</em><em> | </em><em>Any</em><em>, </em><em>default=True</em>) – If <code class="docutils literal notranslate"><span class="pre">False</span></code>, disable excitatory STDP update globally.</p></li>
+<li><p><strong>stdp_negative_update</strong> (<em>bool</em><em> | </em><em>Any</em><em>, </em><em>default=True</em>) – If <code class="docutils literal notranslate"><span class="pre">False</span></code>, disable inhibitory STDP update globally.</p></li>
+<li><p><strong>default_dtype</strong> (<em>type</em><em> | </em><em>np.dtype</em><em>, </em><em>default=np.float64</em>) – Default data type for internal numpy representation of all floating-point arrays.</p></li>
+<li><p><strong>default_bool_dtype</strong> (<em>type</em><em> | </em><em>np.dtype</em><em>, </em><em>default=bool</em>) – Default data type for internal numpy representation of stdp_enabled values and spike vectors.</p></li>
+<li><p><strong>gpu</strong> (<em>bool</em>) – If <code class="docutils literal notranslate"><span class="pre">False</span></code>, disable GPU acceleration. By default, this is <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">numba.cuda.is_available()</span></code>.</p></li>
+<li><p><strong>manual_setup</strong> (<em>bool</em><em>, </em><em>default=False</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, disable automatic setup of SNN when <code class="xref py py-meth docutils literal notranslate"><span class="pre">simulate()</span></code> is called.</p></li>
+<li><p><strong>allow_incorrect_stdp_sign</strong> (<em>bool</em><em>, </em><em>default=False</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, allow negative values in <code class="xref py py-attr docutils literal notranslate"><span class="pre">apos</span></code> and positive values in <code class="xref py py-attr docutils literal notranslate"><span class="pre">aneg</span></code>.</p></li>
+<li><p><strong>allow_signed_leak</strong> (<em>bool</em><em>, </em><em>default=False</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, allow negative values in <code class="xref py py-attr docutils literal notranslate"><span class="pre">neuron_leaks</span></code>. Normally, positive leak will result in charge decay.</p></li>
+<li><p><strong>backend</strong> (<em>str</em><em>, </em><em>default='auto'</em>) – The backend to use for simulation. Can be <code class="docutils literal notranslate"><span class="pre">'auto'</span></code>, <code class="docutils literal notranslate"><span class="pre">'cpu'</span></code>, <code class="docutils literal notranslate"><span class="pre">'jit'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'gpu'</span></code>.
+Can be overridden on a per-<code class="xref py py-meth docutils literal notranslate"><span class="pre">simulate()</span></code> basis.</p></li>
+<li><p><strong>sparse</strong> (<em>bool</em><em> | </em><em>str</em><em> | </em><em>Any</em><em>, </em><em>default=False</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, use sparse representation of SNN. If <code class="docutils literal notranslate"><span class="pre">'auto'</span></code>, use sparse representation if <code class="docutils literal notranslate"><span class="pre">num_neurons</span> <span class="pre">&gt;</span> <span class="pre">100</span></code>.
+Sparse representation is only available using the <code class="docutils literal notranslate"><span class="pre">'cpu'</span></code> backend.</p></li>
+<li><p><strong>last_used_backend</strong> (<em>str</em><em>, </em><em>default=None</em>) – The backend most recently used for simulation.</p></li>
+<li><p><strong>is_sparse</strong> (<em>bool</em><em>, </em><em>default=False</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the SNN is being internally represented using a sparse representation.</p></li>
+<li><p><strong>stdp_time_steps</strong> (<em>int</em>) – Number of time steps over which STDP updates will be made. This is determined
+from the length of apos or aneg.</p></li>
+<li><p><strong>ispikes</strong> (<em>np.ndarray</em><em>[</em><em>(</em><em>int</em><em>, </em><em>int</em><em>)</em><em>, </em><em>bool</em><em>]</em>) – Binary numpy array of input spikes for each time step. Index by <code class="docutils literal notranslate"><span class="pre">ispikes[t,</span> <span class="pre">neuron_id]</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>neuron_thresholds<span class="classifier">list</span></dt><dd><p>List of neuron thresholds</p>
+</dd>
+<dt>neuron_leaks<span class="classifier">list</span></dt><dd><p>List of neuron leaks
+defined as the amount by which the internal states of the neurons are pushed towards the neurons’ reset states</p>
+</dd>
+<dt>neuron_reset_states<span class="classifier">list</span></dt><dd><p>List of neuron reset states</p>
+</dd>
+<dt>neuron_refractory_periods<span class="classifier">list</span></dt><dd><p>List of neuron refractory periods</p>
+</dd>
+<dt>pre_synaptic_neuron_ids<span class="classifier">list</span></dt><dd><p>List of pre-synaptic neuron IDs</p>
+</dd>
+<dt>post_synaptic_neuron_ids<span class="classifier">list</span></dt><dd><p>List of post-synaptic neuron IDs</p>
+</dd>
+<dt>synaptic_weights<span class="classifier">list</span></dt><dd><p>List of synaptic weights</p>
+</dd>
+<dt>synaptic_delays<span class="classifier">list</span></dt><dd><p>List of synaptic delays</p>
+</dd>
+<dt>enable_stdp<span class="classifier">list</span></dt><dd><p>List of Boolean values denoting whether STDP learning is enabled on each synapse</p>
+</dd>
+<dt>input_spikes<span class="classifier">dict</span></dt><dd><p>Dictionary of input spikes for each time step.</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ol class="arabic">
+<li><p>Delay is implemented by adding a chain of proxy neurons.</p>
+<p>A delay of 10 between neuron A and neuron B would add 9 proxy neurons between A and B.
+This may result in severe performance degradation. Consider using sparse representation
+or agent-based SNN simulators in networks with high delay times.</p>
+</li>
+</ol>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<ol class="arabic">
+<li><p>Leak brings the internal state of the neuron closer to the reset state.</p>
+<p>The leak value is the amount by which the internal state of the neuron is pushed towards its reset state.</p>
+</li>
+<li><p>Deletion of neurons may result in unexpected behavior.</p></li>
+<li><p>Input spikes can have a value</p></li>
+<li><p>All neurons are monitored by default</p></li>
+</ol>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Attributes<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>backend</strong></dt><dd></dd>
+<dt><strong>dbin</strong></dt><dd></dd>
+<dt><strong>dd</strong></dt><dd></dd>
+<dt><strong>is_sparse</strong></dt><dd></dd>
+<dt><strong>ispikes</strong></dt><dd></dd>
+<dt><strong>num_neurons</strong></dt><dd></dd>
+<dt><strong>num_synapses</strong></dt><dd></dd>
+<dt><strong>sparse</strong></dt><dd></dd>
+<dt><strong>stdp_time_steps</strong></dt><dd></dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Methods</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_spike</span></code>(time, neuron_id[, value])</p></td>
+<td><p>Adds an external spike in the SNN</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code>()</p></td>
+<td><p>Returns a copy of the SNN</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_neuron</span></code>([threshold, leak, ...])</p></td>
+<td><p>Create a neuron in the SNN.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_synapse</span></code>(pre_id, post_id[, weight, ...])</p></td>
+<td><p>Creates a synapse in the SNN</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_input_spikes_df</span></code>()</p></td>
+<td><p>Returns a DataFrame containing information about input spikes.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_neuron_df</span></code>()</p></td>
+<td><p>Returns a DataFrame containing information about neurons.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stdp_enabled_df</span></code>()</p></td>
+<td><p>Returns a DataFrame containing information about STDP enabled synapses.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_synapse_df</span></code>()</p></td>
+<td><p>Returns a DataFrame containing information about synapses.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_synapse_id</span></code>(pre_id, post_id)</p></td>
+<td><p>Returns the synapse with the given pre- and post-synaptic neurons.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_synapses_by_post</span></code>(post_id)</p></td>
+<td><p>Returns a list of synapses with the given post-synaptic neuron.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_synapses_by_pre</span></code>(pre_id)</p></td>
+<td><p>Returns a list of synapses with the given pre-synaptic neuron.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_weights_df</span></code>()</p></td>
+<td><p>Returns a DataFrame containing information about synapse weights.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_spike_train</span></code>([max_steps, max_neurons, ...])</p></td>
+<td><p>Prints the spike train.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">recommend</span></code>(time_steps)</p></td>
+<td><p>Recommend a backend to use based on network size and continuous sim time steps.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">release_mem</span></code>()</p></td>
+<td><p>Delete internal variables created during computation.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset</span></code>()</p></td>
+<td><p>Reset the SNN's neuron states, refractory periods, spike train, and input spikes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">simulate</span></code>([time_steps, callback, use, sparse])</p></td>
+<td><p>Simulate the neuromorphic spiking neural network</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">simulate_gpu</span></code>([time_steps, callback])</p></td>
+<td><p>Simulate the neuromorphic circuit using the GPU backend.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">stdp_setup</span></code>([Apos, Aneg, positive_update, ...])</p></td>
+<td><p>Setup the Spike-Time-Dependent Plasticity (STDP) parameters</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<tbody>
+<tr class="row-odd"><td><p><strong>clear_input_spikes</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>clear_memos</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>clear_spike_train</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>consume_input_spikes</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>devec</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>get_synapse</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>input_spikes_info</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>last_used_backend</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>memoize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>neuron_info</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>neuron_spike_totals</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pretty</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>pretty_print</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>pretty_spike_train</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>recommend_sparsity</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>reset_neuron_states</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>reset_refractory_periods</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>restore</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>set_stdp_enabled_from_mat</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>set_weights_from_mat</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>setup</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>setup_input_spikes</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>short</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>simulate_cpu</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>simulate_cpu_jit</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>stdp_enabled_mat</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>stdp_enabled_sparse</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>stdp_info</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>synapse_info</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>unmemoize</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>weight_mat</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>weight_sparsity</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>weights_sparse</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>zero_neuron_states</strong></p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><strong>zero_refractory_periods</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="superneuromat.neuromorphicmodel.SNN.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/kenblu24/superneuromat/blob/docs-live/src/superneuromat/neuromorphicmodel.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#superneuromat.neuromorphicmodel.SNN.__init__" title="Link to this definition">#</a></dt>
+<dd><p>Initialize the SNN</p>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#superneuromat.neuromorphicmodel.SNN.__init__" title="superneuromat.neuromorphicmodel.SNN.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
+<td><p>Initialize the SNN</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_spike</span></code>(time, neuron_id[, value])</p></td>
+<td><p>Adds an external spike in the SNN</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_input_spikes</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_memos</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">clear_spike_train</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">consume_input_spikes</span></code>(time_steps)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code>()</p></td>
+<td><p>Returns a copy of the SNN</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_neuron</span></code>([threshold, leak, ...])</p></td>
+<td><p>Create a neuron in the SNN.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_synapse</span></code>(pre_id, post_id[, weight, ...])</p></td>
+<td><p>Creates a synapse in the SNN</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">devec</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_input_spikes_df</span></code>()</p></td>
+<td><p>Returns a DataFrame containing information about input spikes.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_neuron_df</span></code>()</p></td>
+<td><p>Returns a DataFrame containing information about neurons.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_stdp_enabled_df</span></code>()</p></td>
+<td><p>Returns a DataFrame containing information about STDP enabled synapses.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_synapse</span></code>(pre_id, post_id)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_synapse_df</span></code>()</p></td>
+<td><p>Returns a DataFrame containing information about synapses.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_synapse_id</span></code>(pre_id, post_id)</p></td>
+<td><p>Returns the synapse with the given pre- and post-synaptic neurons.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_synapses_by_post</span></code>(post_id)</p></td>
+<td><p>Returns a list of synapses with the given post-synaptic neuron.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_synapses_by_pre</span></code>(pre_id)</p></td>
+<td><p>Returns a list of synapses with the given pre-synaptic neuron.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_weights_df</span></code>()</p></td>
+<td><p>Returns a DataFrame containing information about synapse weights.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">input_spikes_info</span></code>([max_entries])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">last_used_backend</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">memoize</span></code>(*keys)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">neuron_info</span></code>([max_neurons])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">neuron_spike_totals</span></code>([time_index])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pretty</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pretty_print</span></code>(**kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">pretty_spike_train</span></code>([max_steps, max_neurons, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_spike_train</span></code>([max_steps, max_neurons, ...])</p></td>
+<td><p>Prints the spike train.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">recommend</span></code>(time_steps)</p></td>
+<td><p>Recommend a backend to use based on network size and continuous sim time steps.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">recommend_sparsity</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">release_mem</span></code>()</p></td>
+<td><p>Delete internal variables created during computation.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset</span></code>()</p></td>
+<td><p>Reset the SNN's neuron states, refractory periods, spike train, and input spikes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_neuron_states</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset_refractory_periods</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">restore</span></code>(*args)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_stdp_enabled_from_mat</span></code>(mat)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_weights_from_mat</span></code>(mat)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup</span></code>(**kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_input_spikes</span></code>(time_steps)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">short</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">simulate</span></code>([time_steps, callback, use, sparse])</p></td>
+<td><p>Simulate the neuromorphic spiking neural network</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">simulate_cpu</span></code>([time_steps, callback])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">simulate_cpu_jit</span></code>([time_steps, callback])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">simulate_gpu</span></code>([time_steps, callback])</p></td>
+<td><p>Simulate the neuromorphic circuit using the GPU backend.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">stdp_enabled_mat</span></code>([dtype])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">stdp_enabled_sparse</span></code>([dtype])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">stdp_info</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">stdp_setup</span></code>([Apos, Aneg, positive_update, ...])</p></td>
+<td><p>Setup the Spike-Time-Dependent Plasticity (STDP) parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">synapse_info</span></code>([max_synapses])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unmemoize</span></code>(*keys)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">weight_mat</span></code>([dtype])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">weight_sparsity</span></code>([include_zeros])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">weights_sparse</span></code>([dtype])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">zero_neuron_states</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">zero_refractory_periods</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">backend</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dbin</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">dd</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">disable_performance_warnings</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">eqvars</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">gpu_threshold</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_sparse</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">ispikes</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">jit_threshold</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_neurons</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_synapses</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparse</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparsity_threshold</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">stdp_time_steps</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">API Reference</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="superneuromat.accessor_classes.Neuron.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">superneuromat.accessor_classes.Neuron</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superneuromat.neuromorphicmodel.SNN"><code class="docutils literal notranslate"><span class="pre">SNN</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superneuromat.neuromorphicmodel.SNN.__init__"><code class="docutils literal notranslate"><span class="pre">SNN.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  
+  <div class="tocsection editthispage">
+    <a href="https://github.com/kenblu24/superneuromat/edit/docs-live/doc/build/html/api/_gen/superneuromat.neuromorphicmodel.SNN.rst">
+      <i class="fa-solid fa-pencil"></i>
+      
+      
+        
+          Edit on GitHub
+        
+      
+    </a>
+  </div>
+</div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/api/_gen/superneuromat.neuromorphicmodel.SNN.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Prasanna Date, Chathika Gunaratne, Shruti Kulkarni, Robert Patton, Mark Coletti.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last built Apr 23, 2025.
+  <br/>
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

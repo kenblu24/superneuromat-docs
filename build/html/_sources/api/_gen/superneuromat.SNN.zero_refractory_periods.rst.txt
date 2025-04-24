@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.zero\_refractory\_periods
+===========================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.zero_refractory_periods

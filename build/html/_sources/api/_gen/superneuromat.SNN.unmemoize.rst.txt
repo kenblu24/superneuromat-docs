@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.unmemoize
+===========================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.unmemoize

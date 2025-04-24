@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.create\_synapse
+=================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.create_synapse

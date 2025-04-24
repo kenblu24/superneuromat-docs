@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.ispikes
+=========================
+
+.. currentmodule:: superneuromat
+
+.. autoproperty:: SNN.ispikes

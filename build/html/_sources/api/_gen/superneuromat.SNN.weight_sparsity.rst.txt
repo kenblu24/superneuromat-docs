@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.weight\_sparsity
+==================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.weight_sparsity

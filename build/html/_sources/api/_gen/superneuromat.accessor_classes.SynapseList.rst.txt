@@ -1,0 +1,22 @@
+﻿superneuromat.accessor\_classes.SynapseList
+===========================================
+
+.. currentmodule:: superneuromat.accessor_classes
+
+.. autoclass:: SynapseList
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~SynapseList.__init__
+   
+   
+
+   
+   
+   

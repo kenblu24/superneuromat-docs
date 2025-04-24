@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.disable\_performance\_warnings
+================================================
+
+.. currentmodule:: superneuromat
+
+.. autoattribute:: SNN.disable_performance_warnings

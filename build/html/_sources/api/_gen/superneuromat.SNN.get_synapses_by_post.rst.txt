@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.get\_synapses\_by\_post
+=========================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.get_synapses_by_post

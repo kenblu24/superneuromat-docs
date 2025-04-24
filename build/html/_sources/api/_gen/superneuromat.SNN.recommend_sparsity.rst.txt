@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.recommend\_sparsity
+=====================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.recommend_sparsity

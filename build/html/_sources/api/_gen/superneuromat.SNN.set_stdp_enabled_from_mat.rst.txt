@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.set\_stdp\_enabled\_from\_mat
+===============================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.set_stdp_enabled_from_mat

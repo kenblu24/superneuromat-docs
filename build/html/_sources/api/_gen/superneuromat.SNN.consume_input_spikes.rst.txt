@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.consume\_input\_spikes
+========================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.consume_input_spikes

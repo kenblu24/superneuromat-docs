@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.eqvars
+========================
+
+.. currentmodule:: superneuromat
+
+.. autoattribute:: SNN.eqvars

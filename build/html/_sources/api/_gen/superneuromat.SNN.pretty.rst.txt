@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.pretty
+========================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.pretty

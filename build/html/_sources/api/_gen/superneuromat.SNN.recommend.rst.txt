@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.recommend
+===========================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.recommend

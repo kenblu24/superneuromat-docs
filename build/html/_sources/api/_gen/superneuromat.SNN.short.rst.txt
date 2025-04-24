@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.short
+=======================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.short

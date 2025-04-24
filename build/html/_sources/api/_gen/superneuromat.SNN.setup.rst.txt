@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.setup
+=======================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.setup

@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.backend
+=========================
+
+.. currentmodule:: superneuromat
+
+.. autoproperty:: SNN.backend

@@ -1,0 +1,17 @@
+﻿superneuromat.accessor\_classes
+===============================
+
+.. automodule:: superneuromat.accessor_classes
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Neuron
+      NeuronIterator
+      NeuronList
+      Synapse
+      SynapseIterator
+      SynapseList
+   

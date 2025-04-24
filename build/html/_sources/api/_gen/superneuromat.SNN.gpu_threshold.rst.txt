@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.gpu\_threshold
+================================
+
+.. currentmodule:: superneuromat
+
+.. autoattribute:: SNN.gpu_threshold

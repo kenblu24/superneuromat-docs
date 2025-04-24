@@ -1,0 +1,42 @@
+﻿superneuromat.Neuron
+====================
+
+.. currentmodule:: superneuromat
+
+.. autoclass:: Neuron
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      
+         ~Neuron.__init__
+         ~Neuron.add_spike
+         ~Neuron.connect_child
+         ~Neuron.connect_parent
+         ~Neuron.info
+         ~Neuron.info_row
+         ~Neuron.row_cont
+         ~Neuron.row_header
+         ~Neuron.spikes
+         ~Neuron.spikes_str
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+   
+      ~Neuron.leak
+      ~Neuron.refractory_period
+      ~Neuron.refractory_state
+      ~Neuron.reset_state
+      ~Neuron.state
+      ~Neuron.threshold
+   
+   

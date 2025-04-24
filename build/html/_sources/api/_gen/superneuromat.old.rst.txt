@@ -1,0 +1,12 @@
+superneuromat.old
+=================
+
+.. automodule:: superneuromat.old
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      NeuromorphicModel
+   

@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.weights\_sparse
+=================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.weights_sparse

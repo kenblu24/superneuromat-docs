@@ -1,0 +1,16 @@
+﻿superneuromat
+=============
+
+.. automodule:: superneuromat
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   accessor_classes
+   neuromorphicmodel
+   numba_jit
+   util

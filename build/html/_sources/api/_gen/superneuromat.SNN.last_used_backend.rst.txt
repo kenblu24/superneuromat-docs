@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.last\_used\_backend
+=====================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.last_used_backend

@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.pretty\_spike\_train
+======================================
+
+.. currentmodule:: superneuromat
+
+.. automethod:: SNN.pretty_spike_train
