@@ -1,6 +1,0 @@
-﻿superneuromat.SNN.\_\_init\_\_
-==============================
-
-.. currentmodule:: superneuromat
-
-.. automethod:: SNN.__init__

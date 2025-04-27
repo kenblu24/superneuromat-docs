@@ -62,7 +62,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Apr 23, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 27, 2025"/>
   </head>
   
   
@@ -492,6 +492,7 @@ or <a class="reference internal" href="../api/_gen/superneuromat.SNN.restore.htm
 <span class="n">snn</span> <span class="o">=</span> <span class="n">original</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>The full list of SNN variables which can be memoized is available in the <a class="reference internal" href="../api/_gen/superneuromat.SNN.eqvars.html#superneuromat.SNN.eqvars" title="superneuromat.SNN.eqvars"><code class="xref py py-attr docutils literal notranslate"><span class="pre">eqvars</span></code></a> attribute.</p>
 </section>
 <section id="manual-setup">
 <h2>Manual Setup<a class="headerlink" href="#manual-setup" title="Link to this heading">#</a></h2>
@@ -533,7 +534,7 @@ simulation, you’ll need to call the setup or finalization functions respective
 the internal representations will be out of sync.</p>
 <div class="admonition-spike-train admonition">
 <p class="admonition-title">Spike Train</p>
-<p>For the ‘cpu’ and ‘jit’ backends, the output spike train is always in a
+<p>For the <code class="docutils literal notranslate"><span class="pre">'cpu'</span></code> and <code class="docutils literal notranslate"><span class="pre">'jit'</span></code> backends, the output spike train is always in a
 user-facing representation, so no finalization of the spike train is necessary if
 you want to read or modify the spike train after simulation.</p>
 </div>
@@ -670,7 +671,7 @@ you want to read or modify the spike train after simulation.</p>
 </p></div>
       
         <div class="footer-item"><p class="last-updated">
-  Last built Apr 23, 2025.
+  Last built Apr 27, 2025.
   <br/>
 </p></div>
       

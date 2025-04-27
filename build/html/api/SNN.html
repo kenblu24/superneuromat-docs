@@ -62,7 +62,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Apr 23, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 27, 2025"/>
   </head>
   
   
@@ -483,9 +483,9 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>stdp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a>) – if <code class="docutils literal notranslate"><span class="pre">stdp</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, STDP will be disabled globally.</p></li>
-<li><p><strong>apos</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a>) – List of STDP parameters per time step for excitatory update of weights.</p></li>
-<li><p><strong>aneg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a>) – List of STDP parameters per time step for inhibitory update of weights.</p></li>
+<li><p><strong>stdp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a><em>, </em><em>default=True</em>) – if <code class="docutils literal notranslate"><span class="pre">stdp</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>, STDP will be disabled globally.</p></li>
+<li><p><strong>apos</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>, </em><em>default=</em><em>[</em><em>]</em>) – List of STDP parameters per time step for excitatory update of weights.</p></li>
+<li><p><strong>aneg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.13)"><em>list</em></a><em>, </em><em>default=</em><em>[</em><em>]</em>) – List of STDP parameters per time step for inhibitory update of weights.</p></li>
 <li><p><strong>stdp_positive_update</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><em>Any</em></a><em>, </em><em>default=True</em>) – If <code class="docutils literal notranslate"><span class="pre">False</span></code>, disable excitatory STDP update globally.</p></li>
 <li><p><strong>stdp_negative_update</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><em>bool</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.13)"><em>Any</em></a><em>, </em><em>default=True</em>) – If <code class="docutils literal notranslate"><span class="pre">False</span></code>, disable inhibitory STDP update globally.</p></li>
 <li><p><strong>stdp_time_steps</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – Number of time steps over which STDP updates will be made. This is determined
@@ -646,7 +646,7 @@ or agent-based SNN simulators in networks with high delay times.</p>
 <td><p>Prints the spike train.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="_gen/superneuromat.SNN.short.html#superneuromat.SNN.short" title="superneuromat.SNN.short"><code class="xref py py-obj docutils literal notranslate"><span class="pre">short</span></code></a></p></td>
-<td><p></p></td>
+<td><p>Return a 1-line summary of the SNN.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="_gen/superneuromat.SNN.stdp_info.html#superneuromat.SNN.stdp_info" title="superneuromat.SNN.stdp_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stdp_info</span></code></a></p></td>
 <td><p></p></td>
@@ -930,7 +930,7 @@ or agent-based SNN simulators in networks with high delay times.</p>
 </p></div>
       
         <div class="footer-item"><p class="last-updated">
-  Last built Apr 23, 2025.
+  Last built Apr 27, 2025.
   <br/>
 </p></div>
       

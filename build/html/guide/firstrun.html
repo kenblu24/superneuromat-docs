@@ -62,7 +62,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Apr 23, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 27, 2025"/>
   </head>
   
   
@@ -399,28 +399,199 @@
 <h2>Creating a neuromorphic model<a class="headerlink" href="#creating-a-neuromorphic-model" title="Link to this heading">#</a></h2>
 <p>To create a neuromorphic model, you can use the <a class="reference internal" href="../api/SNN.html#superneuromat.SNN" title="superneuromat.SNN"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNN</span></code></a> class.</p>
 <p>Let’s create a simple neuromorphic model with two neurons and one synapse.</p>
-<p>We’ll use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">add_neuron()</span></code> and <code class="xref py py-meth docutils literal notranslate"><span class="pre">add_synapse()</span></code> methods
+<p>We’ll use the <a class="reference internal" href="../api/_gen/superneuromat.SNN.create_neuron.html#superneuromat.SNN.create_neuron" title="superneuromat.SNN.create_neuron"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_neuron()</span></code></a> and <a class="reference internal" href="../api/_gen/superneuromat.SNN.create_synapse.html#superneuromat.SNN.create_synapse" title="superneuromat.SNN.create_synapse"><code class="xref py py-meth docutils literal notranslate"><span class="pre">create_synapse()</span></code></a> methods
 to add neurons and synapses to the SNN.</p>
-<p>Then, we’ll queue a spike from neuron A to neuron B. This can be done with the <code class="xref py py-meth docutils literal notranslate"><span class="pre">Neuron.add_spike()</span></code> method,
-or the <code class="xref py py-meth docutils literal notranslate"><span class="pre">SNN.add_spike()</span></code> method.</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Python</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<p>Then, we’ll queue a spike from neuron A to neuron B. This can be done with the <a class="reference internal" href="../api/Neuron.html#superneuromat.Neuron.add_spike" title="superneuromat.Neuron.add_spike"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Neuron.add_spike()</span></code></a> method,
+or the <a class="reference internal" href="../api/_gen/superneuromat.SNN.add_spike.html#superneuromat.SNN.add_spike" title="superneuromat.SNN.add_spike"><code class="xref py py-meth docutils literal notranslate"><span class="pre">SNN.add_spike()</span></code></a> method.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Python</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">superneuromat</span> <span class="kn">import</span> <span class="n">SNN</span>
 
 <span class="n">snn</span> <span class="o">=</span> <span class="n">SNN</span><span class="p">()</span>
 
-<span class="n">a</span> <span class="o">=</span> <span class="n">snn</span><span class="o">.</span><span class="n">add_neuron</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">leak</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">snn</span><span class="o">.</span><span class="n">add_neuron</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">leak</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">snn</span><span class="o">.</span><span class="n">create_neuron</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">leak</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">snn</span><span class="o">.</span><span class="n">create_neuron</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">leak</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="n">snn</span><span class="o">.</span><span class="n">add_synapse</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">snn</span><span class="o">.</span><span class="n">create_synapse</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">a</span><span class="o">.</span><span class="n">add_spike</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">add_spike</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
 
-<span class="n">snn</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">snn</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="n">time_steps</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">snn</span><span class="o">.</span><span class="n">neurons</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>The <code class="xref py py-meth docutils literal notranslate"><span class="pre">simulate()</span></code> function simulates the neuromorphic circuit for a given number of time steps.
+During simulation, the input spikes we queued up are sent to the neurons.
+Here, we sent a spike of value <cite>1.0</cite> to neuron <code class="docutils literal notranslate"><span class="pre">a</span></code>. The <code class="docutils literal notranslate"><span class="pre">time</span></code> parameter of <a class="reference internal" href="../api/Neuron.html#superneuromat.Neuron.add_spike" title="superneuromat.Neuron.add_spike"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Neuron.add_spike()</span></code></a> is the
+number of time steps to wait before sending the spike, so it is sent <em>after</em> the <em>first</em> time step.</p>
+<p>We can see that <code class="docutils literal notranslate"><span class="pre">print(snn.neurons)</span></code> shows us the state of the neurons:</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Result</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Neuron<span class="w"> </span>Info<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="o">)</span>:
+idx<span class="w">         </span>state<span class="w">          </span>thresh<span class="w">         </span>leak<span class="w">  </span>ref<span class="w"> </span>per<span class="w">       </span>spikes
+<span class="w">  </span><span class="m">0</span><span class="w">             </span><span class="m">1</span><span class="w">               </span><span class="m">1</span><span class="w">            </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">       </span><span class="o">[</span>--<span class="o">]</span>
+<span class="w">  </span><span class="m">1</span><span class="w">             </span><span class="m">0</span><span class="w">               </span><span class="m">1</span><span class="w">            </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">       </span><span class="o">[</span>--<span class="o">]</span>
+</pre></div>
+</div>
+</div>
+<p>By default, each neuron created has a charge state of <cite>0.0</cite>. After sending a spike of value <cite>1.0</cite> to neuron <code class="docutils literal notranslate"><span class="pre">a</span></code>,
+you should see that neuron <code class="docutils literal notranslate"><span class="pre">a</span></code> now has a weight of <cite>1.0</cite>, which is barely not enough for the neuron to spike.</p>
+</section>
+<section id="integrate-and-fire">
+<h2>Integrate and Fire<a class="headerlink" href="#integrate-and-fire" title="Link to this heading">#</a></h2>
+<p>Let’s add another spike to neuron <code class="docutils literal notranslate"><span class="pre">a</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Python</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">add_spike</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+
+<span class="n">snn</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">snn</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<p>You should see something like this:</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Result</span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SNN<span class="w"> </span>with<span class="w"> </span><span class="m">2</span><span class="w"> </span>neurons<span class="w"> </span>and<span class="w"> </span><span class="m">1</span><span class="w"> </span>synapses<span class="w"> </span>@<span class="w"> </span>0x1e000f00ba4
+STDP<span class="w"> </span>is<span class="w"> </span>globally<span class="w">  </span>enabled<span class="w"> </span>with<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nb">time</span><span class="w"> </span>steps
+apos:<span class="w"> </span><span class="o">[]</span>
+aneg:<span class="w"> </span><span class="o">[]</span>
+
+Neuron<span class="w"> </span>Info<span class="o">(</span><span class="m">2</span><span class="o">)</span>:
+idx<span class="w">          </span>state<span class="w">          </span>thresh<span class="w">         </span>leak<span class="w">  </span>ref<span class="w"> </span>per<span class="w">       </span>spikes
+<span class="w">   </span><span class="m">0</span><span class="w">             </span><span class="m">0</span><span class="w">               </span><span class="m">1</span><span class="w">            </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">       </span><span class="o">[</span>--┴-<span class="o">]</span>
+<span class="w">   </span><span class="m">1</span><span class="w">             </span><span class="m">1</span><span class="w">               </span><span class="m">1</span><span class="w">            </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">       </span><span class="o">[</span>----<span class="o">]</span>
+
+Synapse<span class="w"> </span>Info<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span>:
+idx<span class="w">      </span>pre<span class="w">   </span>post<span class="w">         </span>weight<span class="w">     </span>delay<span class="w">   </span>stdp_enabled
+<span class="w">   </span><span class="m">0</span><span class="w">       </span><span class="m">0</span><span class="w">      </span><span class="m">1</span><span class="w">              </span><span class="m">1</span><span class="w">         </span><span class="m">1</span><span class="w">   </span>-
+
+Input<span class="w"> </span>Spikes:
+Time:<span class="w">  </span>Spike-value<span class="w">    </span>Destination
+
+
+Spike<span class="w"> </span>Train:
+t:<span class="w">  </span><span class="m">0</span><span class="w"> </span><span class="m">1</span>
+<span class="m">0</span>:<span class="w"> </span><span class="o">[</span>│<span class="w"> </span>│<span class="w"> </span><span class="o">]</span>
+<span class="m">1</span>:<span class="w"> </span><span class="o">[</span>│<span class="w"> </span>│<span class="w"> </span><span class="o">]</span>
+<span class="m">2</span>:<span class="w"> </span><span class="o">[</span>├─│<span class="w"> </span><span class="o">]</span>
+<span class="m">3</span>:<span class="w"> </span><span class="o">[</span>│<span class="w"> </span>│<span class="w"> </span><span class="o">]</span>
+<span class="m">1</span><span class="w"> </span>spikes<span class="w"> </span>since<span class="w"> </span>last<span class="w"> </span>reset
+</pre></div>
+</div>
+</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="fas fa-info"></span>  <strong>What just happened?</strong></div>
+<p class="sd-card-text">We sent another spike of value <cite>1.0</cite> to neuron <code class="docutils literal notranslate"><span class="pre">a</span></code>. During <code class="docutils literal notranslate"><span class="pre">snn.simulate(2)</span></code>,
+neuron <code class="docutils literal notranslate"><span class="pre">a</span></code>’s state increased from <cite>1.0</cite> to <cite>2.0</cite>. Since <code class="docutils literal notranslate"><span class="pre">a.state</span> <span class="pre">&gt;</span> <span class="pre">a.threshold</span></code>,
+the neuron spiked, and its charge state was reset to <cite>0.0</cite>.</p>
+<p class="sd-card-text">Because neuron <code class="docutils literal notranslate"><span class="pre">a</span></code> is connected to neuron <code class="docutils literal notranslate"><span class="pre">b</span></code>, the spike travels through
+the synapse and is sent to neuron <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">b.state</span></code> increased from <cite>0.0</cite> to <cite>1.0</cite>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>This is the Integrate-and-Fire part of the Leaky Integrate and Fire (<strong>LIF</strong>) model, which is a heavily simplified model of how biological neurons
+operate. We’ll talk about Leak, Refractory period, and Reset states later. For now, let’s move on to the STDP part of the model.</p>
+</section>
+<section id="learning-with-stdp">
+<h2>Learning with STDP<a class="headerlink" href="#learning-with-stdp" title="Link to this heading">#</a></h2>
+<p>Neural networks often need to be trained to be useful, but Spiking Neural Networks (SNNs)
+cannot learn like other neural networks which use gradient descent, because spikes are
+non-differentiable.</p>
+<p>SNNs can learn using other mechanisms, such as gradient surrogates or evolutionary algorithms,
+but the primary method of learning supported by SuperNeuroMAT is Spike-Timing-Dependent
+Plasticity (STDP).</p>
+<p>STDP is a mechanism that allows neurons to adapt their firing rates based on the timing of
+spikes. It is a form of synaptic plasticity, which means that the strength of the synapses
+between neurons can change over time.</p>
+<p>The theory is simple: Connections between neurons that fire at the same time should be stronger,
+and connections between neurons that fire at different times should be weaker.
+This is a simplified version of <a class="reference external" href="https://en.wikipedia.org/wiki/Hebbian_theory">Hebb’s rule</a>,
+often referred to by the adage, “Neurons that fire together, wire together.”</p>
+<p>To use STDP, you need to set the amount that the synaptic weight should change if
+neurons fire at the same time. This is done with the <code class="xref py py-attr docutils literal notranslate"><span class="pre">apos</span></code> attribute.</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Python</span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">superneuromat</span> <span class="kn">import</span> <span class="n">SNN</span>
+
+<span class="n">snn</span> <span class="o">=</span> <span class="n">SNN</span><span class="p">()</span>
+
+<span class="n">snn</span><span class="o">.</span><span class="n">apos</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">]</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">snn</span><span class="o">.</span><span class="n">create_neuron</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">leak</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">snn</span><span class="o">.</span><span class="n">create_neuron</span><span class="p">(</span><span class="n">threshold</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">leak</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">snn</span><span class="o">.</span><span class="n">create_synapse</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stdp_enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">a</span><span class="o">.</span><span class="n">add_spike</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">add_spike</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">add_spike</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">b</span><span class="o">.</span><span class="n">add_spike</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+
+<span class="n">snn</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="n">time_steps</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">snn</span><span class="o">.</span><span class="n">neurons</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">snn</span><span class="o">.</span><span class="n">synapses</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Result</span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Neuron<span class="w"> </span>Info<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="o">)</span>:
+idx<span class="w">         </span>state<span class="w">          </span>thresh<span class="w">         </span>leak<span class="w">  </span>ref<span class="w"> </span>per<span class="w">       </span>spikes
+<span class="w">  </span><span class="m">0</span><span class="w">             </span><span class="m">0</span><span class="w">               </span><span class="m">1</span><span class="w">            </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">       </span><span class="o">[</span>┴┴<span class="o">]</span>
+<span class="w">  </span><span class="m">1</span><span class="w">             </span><span class="m">0</span><span class="w">               </span><span class="m">1</span><span class="w">            </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">       </span><span class="o">[</span>┴┴<span class="o">]</span>
+
+Synapse<span class="w"> </span>Info<span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="o">)</span>:
+idx<span class="w">     </span>pre<span class="w">   </span>post<span class="w">         </span>weight<span class="w">     </span>delay<span class="w">   </span>stdp_enabled
+<span class="w">  </span><span class="m">0</span><span class="w">       </span><span class="m">0</span><span class="w">      </span><span class="m">1</span><span class="w">            </span><span class="m">1</span>.1<span class="w">         </span><span class="m">1</span><span class="w">   </span>Y
+</pre></div>
+</div>
+</div>
+<p>As you can see, the synapse between neurons <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> has a weight of <cite>1.1</cite>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The STDP update takes place across two timesteps. This is because <a class="reference external" href="https://en.wikipedia.org/wiki/Hebbian_theory">Hebb’s rule</a>
+applies to causal relationships. A neuron can’t directly cause another neuron to fire in the same timestep as SuperNeuroMAT
+doesn’t allow for zero-delay synapses. So, STDP applies to the current spike output, and the spike output
+from previous timesteps.</p>
+<p>To see the second set of spikes update the weight, run <code class="docutils literal notranslate"><span class="pre">snn.simulate()</span></code> again, and the synapse will have a weight of <cite>1.2</cite>.</p>
+</div>
+<p>You can choose a different amount of positive or negative update to occur between the current timestep and
+any previous timestep:</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Python</span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snn</span><span class="o">.</span><span class="n">add_spike</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">neuron_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+
+<span class="n">snn</span><span class="o">.</span><span class="n">apos</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
+<span class="n">snn</span><span class="o">.</span><span class="n">aneg</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span>
+
+<span class="n">snn</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="n">time_steps</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">snn</span><span class="o">.</span><span class="n">synapses</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>You can also temporarily disable STDP without setting <code class="docutils literal notranslate"><span class="pre">apos</span></code> or <code class="docutils literal notranslate"><span class="pre">aneg</span></code> to be empty:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snn</span><span class="o">.</span><span class="n">stdp_positive_update</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># turns off positive update</span>
+<span class="n">snn</span><span class="o">.</span><span class="n">stdp_negative_update</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># turns off negative update</span>
+<span class="n">snn</span><span class="o">.</span><span class="n">stdp</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># turns off STDP entirely</span>
+
+<span class="c1"># prevent a particular synapse&#39;s weights from changing</span>
+<span class="n">snn</span><span class="o">.</span><span class="n">synapses</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">stdp_enabled</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># turns off STDP for synapse 0</span>
+<span class="c1"># you can also do this when creating the synapse</span>
+<span class="n">snn</span><span class="o">.</span><span class="n">create_synapse</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">stdp_enabled</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># False is the default</span>
+</pre></div>
 </div>
 </section>
 </section>
@@ -473,6 +644,8 @@ or the <code class="xref py py-meth docutils literal notranslate"><span class="p
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-neuromorphic-model">Creating a neuromorphic model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrate-and-fire">Integrate and Fire</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-with-stdp">Learning with STDP</a></li>
 </ul>
   </nav></div>
 
@@ -553,7 +726,7 @@ or the <code class="xref py py-meth docutils literal notranslate"><span class="p
 </p></div>
       
         <div class="footer-item"><p class="last-updated">
-  Last built Apr 23, 2025.
+  Last built Apr 27, 2025.
   <br/>
 </p></div>
       

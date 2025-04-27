@@ -62,7 +62,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Apr 23, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 27, 2025"/>
   </head>
   
   
@@ -394,6 +394,164 @@
                   
   <section id="considerations-for-speed">
 <h1>Considerations for Speed<a class="headerlink" href="#considerations-for-speed" title="Link to this heading">#</a></h1>
+<p>SuperNeuroMAT uses a bimodal representation of the SNN. The user-facing API, the frontend,
+is designed for fast and easy building of the SNN, but the backend uses its own internal
+representation. Most of the translation between frontend and backend representations is
+handled by the <a class="reference internal" href="../api/_gen/superneuromat.SNN.simulate.html#superneuromat.SNN.simulate" title="superneuromat.SNN.simulate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">simulate()</span></code></a> function.</p>
+<section id="choosing-a-backend">
+<h2>Choosing a Backend<a class="headerlink" href="#choosing-a-backend" title="Link to this heading">#</a></h2>
+<p>There are several different backends available, each with certain advantages and disadvantages.
+SuperNeuroMAT automatically chooses a backend based on several factors:</p>
+<ul class="simple">
+<li><p>Availability of <code class="docutils literal notranslate"><span class="pre">'jit'</span></code> and <code class="docutils literal notranslate"><span class="pre">'gpu'</span></code> backends</p></li>
+<li><p>Number of neurons in the SNN</p></li>
+<li><p>Number of synapses in the SNN</p></li>
+<li><p>Number of time steps in the simulation</p></li>
+</ul>
+<p>However, the
+If you want to force SuperNeuroMAT to use a specific backend and sparsity mode, you can set the
+<a class="reference internal" href="../api/_gen/superneuromat.SNN.backend.html#superneuromat.SNN.backend" title="superneuromat.SNN.backend"><code class="xref py py-attr docutils literal notranslate"><span class="pre">backend</span></code></a> and <a class="reference internal" href="../api/_gen/superneuromat.SNN.sparse.html#superneuromat.SNN.sparse" title="superneuromat.SNN.sparse"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sparse</span></code></a> attributes.</p>
+<p>Here are the available backends:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">'auto'</span></code>: Choose the fastest backend available based on the above factors.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'cpu'</span></code>: Use the CPU backend.</p>
+<blockquote>
+<div><p>The CPU backend is the most widely supported backend, but its dense representation
+is often the slowest implementation.
+The CPU backend is also the only backend that supports sparse representations.</p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'jit'</span></code>: Use the JIT backend.</p>
+<blockquote>
+<div><p>The <code class="docutils literal notranslate"><span class="pre">'jit'</span></code> backend uses just-in-time compilation to avoid some of the overhead
+of python. However, there is an initial compilation cost at the first simulation call.
+It is chosen when the number of neurons is large or the number of time steps is large.
+Currently, it does not support sparse mode.</p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'gpu'</span></code>: Use the GPU backend.</p>
+<blockquote>
+<div><p>The <code class="docutils literal notranslate"><span class="pre">'gpu'</span></code> backend uses the CUDA GPU to accelerate the simulation.
+It tends to be faster than the <code class="docutils literal notranslate"><span class="pre">'jit'</span></code> backend, and excels at processing dense
+networks with many neurons, many synapses, and many <code class="docutils literal notranslate"><span class="pre">simulate()</span></code> time steps.
+However, having many STDP time steps may cause slow operation, and GPU memory tends
+to be more limited than CPU memory, limiting the size of the SNN that can be simulated.</p>
+<p>SuperNeuroMAT does not check for GPU memory size, so you should make sure you have enough
+GPU memory available before running a simulation with this backend.</p>
+<p>Currently, it does not support sparse mode.</p>
+</div></blockquote>
+</li>
+</ul>
+<p>If <a class="reference internal" href="../api/_gen/superneuromat.SNN.sparse.html#superneuromat.SNN.sparse" title="superneuromat.SNN.sparse"><code class="xref py py-attr docutils literal notranslate"><span class="pre">sparse</span></code></a> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, SuperNeuroMAT will use a sparse representation
+of the SNN. This is only available using the <code class="docutils literal notranslate"><span class="pre">'cpu'</span></code> backend. If the backend is <code class="docutils literal notranslate"><span class="pre">'auto'</span></code>,
+the <code class="docutils literal notranslate"><span class="pre">'cpu'</span></code> backend will be used so that the sparse mode is available.</p>
+<p>Sparse mode excels at simulating networks with very few synapses and is less likely to be
+affected by having many STDP time steps.</p>
+</section>
+<section id="multiprocessing-and-multi-threading">
+<h2>Multiprocessing and Multi-Threading<a class="headerlink" href="#multiprocessing-and-multi-threading" title="Link to this heading">#</a></h2>
+<p>Many of SuperNeuroMAT’s backends use NumPy and SciPy to perform matrix operations.
+These libraries in turn use BLAS and LAPACK libraries, which tend to be C-based linear algebra libraries.</p>
+<p>Many implementations of these libraries will multi-thread matrix functions behind the scenes.
+This means that you might not see a linear performance increase by implementing concurrent processing
+of multiple SuperNeuroMAT models, as a single model may already be using multiple threads.</p>
+<p>You may want to see Jason Brownlee’s
+<a class="reference external" href="https://superfastpython.com/multithreaded-numpy-functions/">Whicn NumPy Functions are Multithreaded</a>
+post for more information.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This applies to the <code class="docutils literal notranslate"><span class="pre">'cpu'</span></code> and <code class="docutils literal notranslate"><span class="pre">'jit'</span></code> backends, but not the <code class="docutils literal notranslate"><span class="pre">'gpu'</span></code> backend, which
+may still benefit from <code class="docutils literal notranslate"><span class="pre">`python.multiprocessing</span></code>, as long as your GPU has enough memory and cores.</p>
+</div>
+</section>
+<section id="memory-usage">
+<h2>Memory Usage<a class="headerlink" href="#memory-usage" title="Link to this heading">#</a></h2>
+<p>The size of the SNN is determined by the number of neurons and synapses in the SNN.
+SuperNeuroMAT needs to store properties of each neuron and synapse, so for large networks,
+it may help to understand the different possible representations of the SNN.</p>
+<section id="sparse-vs-dense">
+<h3>Sparse vs. Dense<a class="headerlink" href="#sparse-vs-dense" title="Link to this heading">#</a></h3>
+<p>An SNN is made of neurons and synapses. A synapse is a connection between two neurons,
+so to represent a synapse, we need to store the ID of its pre- and post-synaptic neurons, as well as
+the weight of the synapse.</p>
+<p>One way to represent a synapse is to store the weight of the synapse in a dense matrix, the column index
+and row index represent the pre- and post-synaptic neurons, and the value of the matrix represents the weight.
+This is the dense representation, and it tends to be quite large, as it stores the weight of every possible
+connection between every neuron in the network, even if we don’t want those connections. This means that
+the dense weight matrix always represents <code class="docutils literal notranslate"><span class="pre">num_neurons</span> <span class="pre">**</span> <span class="pre">2</span></code> synapses even if we have fewer synapses than that.</p>
+<p>Another way to represent a synapse is to store the weight of the synapse in a sparse matrix, which is a
+matrix that only stores the non-zero values of the matrix. This is the sparse representation, and it tends
+to be much smaller than the dense representation, as it only stores the weight of the connections that
+we actually make.</p>
+<p>However, a sparse representation has some overhead, as we need to store which connections we care about.
+This is fine if the number of synapses is much smaller than the number of neurons, but if we have lots of
+synapses, we might end up using more memory to store the addresses of the source and destination neurons
+than a dense matrix, which doesn’t use any memory for the addresses.</p>
+</section>
+<section id="frontend">
+<h3>Frontend<a class="headerlink" href="#frontend" title="Link to this heading">#</a></h3>
+<p>The frontend representation of the SNN uses a sparse representation as Python list objects.</p>
+<p>There are several lists which are used to represent the SNN.</p>
+<p class="rubric">Neuron Properties</p>
+<ul class="simple">
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">neuron_thresholds</span></code>: The threshold value for each neuron.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">neuron_leaks</span></code>: The leak value for each neuron.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">neuron_reset_states</span></code>: The reset state for each neuron.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">neuron_refractory_periods</span></code>: The refractory period for each neuron.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">neuron_refractory_periods_state</span></code>: The refractory period state for each neuron.</p></li>
+</ul>
+<p class="rubric">Synapse Properties</p>
+<ul class="simple">
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">pre_synaptic_neuron_ids</span></code>: The ID of the pre-synaptic neuron for each synapse.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">post_synaptic_neuron_ids</span></code>: The ID of the post-synaptic neuron for each synapse.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">synaptic_weights</span></code>: The weight of each synapse.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">synaptic_delays</span></code>: The delay of the synapse.</p></li>
+<li><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">enable_stdp</span></code>: The STDP enabled state of each synapse.</p></li>
+</ul>
+</section>
+<section id="backend">
+<h3>Backend<a class="headerlink" href="#backend" title="Link to this heading">#</a></h3>
+<p>The backend representation consists of NumPy or SciPy arrays.</p>
+<p>For most properties, the backend representation is a NumPy vector, that is, a 1-dimensional array.
+For example, the <code class="xref py py-attr docutils literal notranslate"><span class="pre">neuron_thresholds</span></code> property is a 1-dimensional array where each
+element is the threshold value for a neuron.</p>
+<p>However, for the <code class="xref py py-attr docutils literal notranslate"><span class="pre">synaptic_weights</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">enable_stdp</span></code>
+properties, the backend representation may be sparse or dense, as we need to represent a property for each connection between neurons.</p>
+<p>In dense mode, a the synaptic weights are stored as a 2-dimensional array where each element is the weight of a synapse.
+In sparse mode, the synaptic weights are stored as a sparse matrix, where the pre- and post-synaptic neuron IDs
+are stored as vectors, and the weight of the synapse is stored as a vector. This only stores the weights of the connections
+that are active in the network.</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<span class="fas fa-memory"></span> Releasing backend memory</div>
+<p class="sd-card-text">When you call <a class="reference internal" href="../api/_gen/superneuromat.SNN.simulate.html#superneuromat.SNN.simulate" title="superneuromat.SNN.simulate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">simulate()</span></code></a> or <a class="reference internal" href="../api/_gen/superneuromat.SNN.setup.html#superneuromat.SNN.setup" title="superneuromat.SNN.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a>, SuperNeuroMAT
+will create the internal representation. During multiprocessing, a Python process may not exit cleanly, or Python’s reference
+counting may not be accurate. This can result in Python failing to garbage collect the internal representation of completed processes.
+To avoid this, you can call <a class="reference internal" href="../api/_gen/superneuromat.SNN.release_mem.html#superneuromat.SNN.release_mem" title="superneuromat.SNN.release_mem"><code class="xref py py-meth docutils literal notranslate"><span class="pre">release_mem()</span></code></a> after <a class="reference internal" href="../api/_gen/superneuromat.SNN.simulate.html#superneuromat.SNN.simulate" title="superneuromat.SNN.simulate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">simulate()</span></code></a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p class="sd-card-text"><a class="reference internal" href="../api/_gen/superneuromat.SNN.release_mem.html#superneuromat.SNN.release_mem" title="superneuromat.SNN.release_mem"><code class="xref py py-meth docutils literal notranslate"><span class="pre">release_mem()</span></code></a> is a low-level function and has few safeguards.
+Use with caution. It will call <a class="reference external" href="https://docs.python.org/3/reference/simple_stmts.html#del" title="(in Python v3.13)"><span>The del statement</span></a> on all numpy internal state variables.</p>
+<p class="sd-card-text">This means that errors will be raised if called before <a class="reference internal" href="../api/_gen/superneuromat.SNN.setup.html#superneuromat.SNN.setup" title="superneuromat.SNN.setup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">setup()</span></code></a> or <a class="reference internal" href="../api/_gen/superneuromat.SNN.simulate.html#superneuromat.SNN.simulate" title="superneuromat.SNN.simulate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">simulate()</span></code></a>,
+or if called more than once in a row.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snn</span><span class="o">.</span><span class="n">simulate</span><span class="p">()</span>
+<span class="c1"># only call release_mem() after setting up the SNN</span>
+<span class="n">snn</span><span class="o">.</span><span class="n">release_mem</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="synaptic-delays">
+<h2>Synaptic Delays<a class="headerlink" href="#synaptic-delays" title="Link to this heading">#</a></h2>
+<p>Synaptic delays are implemented by adding a chain of proxy neurons.</p>
+<p>A delay of 10 between neuron A and neuron B would add 9 proxy neurons between A and B.
+This may result in severe performance degradation. Consider using sparse representation
+or agent-based SNN simulators in networks with high delay times.</p>
+</section>
 </section>
 
 
@@ -434,6 +592,26 @@
                 <dialog id="pst-secondary-sidebar-modal"></dialog>
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-backend">Choosing a Backend</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiprocessing-and-multi-threading">Multiprocessing and Multi-Threading</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-usage">Memory Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-vs-dense">Sparse vs. Dense</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frontend">Frontend</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#backend">Backend</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synaptic-delays">Synaptic Delays</a></li>
+</ul>
+  </nav></div>
 
   <div class="sidebar-secondary-item">
 
@@ -512,7 +690,7 @@
 </p></div>
       
         <div class="footer-item"><p class="last-updated">
-  Last built Apr 23, 2025.
+  Last built Apr 27, 2025.
   <br/>
 </p></div>
       

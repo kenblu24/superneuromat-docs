@@ -61,7 +61,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Apr 23, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 27, 2025"/>
   </head>
   
   
@@ -353,7 +353,7 @@
 <p>SuperNeuroMAT is a Python package for simulating and analyzing spiking neural networks.</p>
 <p>Unlike its sister package, <a class="reference external" href="https://github.com/ORNL/superneuroabm">SuperNeuroABM</a>, SuperNeuroMAT uses a matrix-based representation
 of the network, which allows for more efficient simulation and GPU acceleration.</p>
-<p>SuperNeuroMAT focuses on super-fast computation of <strong>LIF</strong> spiking neuron models.</p>
+<p>SuperNeuroMAT focuses on super-fast computation of Leaky Integrate and Fire <strong>(LIF)</strong> spiking neuron models with STDP.</p>
 <p>This documentation currently covers the <a class="github reference external" href="https://github.com/kenblu24/superneuromat">kenblu24/superneuromat</a> fork, but this
 will be upstreamed to the main SuperNeuroMAT repository in the future.</p>
 <div class="admonition warning">
@@ -380,6 +380,7 @@ other</label><div class="sd-tab-content docutils">
 <li class="toctree-l1"><a class="reference internal" href="guide/install.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="guide/install.html#setting-up-your-environment">Setting up your environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide/install.html#installing-superneuromat">Installing SuperNeuroMAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guide/install.html#installing-with-numba-support">Installing with Numba support</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide/install.html#development-installations">Development Installations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="guide/install.html#wsl-installation">WSL Installation</a></li>
 </ul>
@@ -388,12 +389,11 @@ other</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>For more detailed instructions, see the
-<a class="reference internal" href="guide/install.html"><span class="doc">installation guide</span></a>
-, which covers virtual environments, faster installation with uv, and more.</p>
+<p>For more detailed instructions, see the <a class="reference internal" href="guide/install.html"><span class="doc">installation guide</span></a>, which covers
+virtual environments, faster installation with uv, installing support for CUDA GPU acceleration, and more.</p>
 <p>Then, you can import the <code class="xref py py-mod docutils literal notranslate"><span class="pre">superneuromat</span></code> package:</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Python</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Python</span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">superneuromat</span> <span class="kn">import</span> <span class="n">SNN</span>
 </pre></div>
 </div>
@@ -412,17 +412,18 @@ If you use it in your research, please cite the following paper:</p>
 </pre></div>
 </div>
 <p class="rubric">References</p>
+<p>See the literature <a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id6" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> for SuperNeuroMAT.</p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id1" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://doi.org/10.1145/3589737.3606000">SuperNeuro: A Fast and Scalable Simulator for Neuromorphic Computing</a></p>
 </aside>
-<aside class="footnote brackets" id="id2" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://doi.org/10.1145/3546790.3546806">Neuromorphic Computing is Turing-Complete</a></p>
 </aside>
-<aside class="footnote brackets" id="id3" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id6" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="https://doi.org/10.1145/3477145.3477154">Computational Complexity of Neuromorphic Algorithms</a></p>
 </aside>
 </aside>
@@ -576,7 +577,7 @@ If you use it in your research, please cite the following paper:</p>
 </p></div>
       
         <div class="footer-item"><p class="last-updated">
-  Last built Apr 23, 2025.
+  Last built Apr 27, 2025.
   <br/>
 </p></div>
       
