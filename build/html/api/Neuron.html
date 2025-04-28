@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e3d8e547" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=f797f871" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -62,7 +62,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Apr 27, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 28, 2025"/>
   </head>
   
   
@@ -500,19 +500,22 @@ To test for equality, use <code class="docutils literal notranslate"><span class
 <tr class="row-odd"><td><p><a class="reference internal" href="#superneuromat.Neuron.add_spike" title="superneuromat.Neuron.add_spike"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_spike</span></code></a>(time[, value])</p></td>
 <td><p>Queue a spike to be sent to this Neuron.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#superneuromat.Neuron.connect_child" title="superneuromat.Neuron.connect_child"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_child</span></code></a>(child[, weight, delay, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#superneuromat.Neuron.add_spikes" title="superneuromat.Neuron.add_spikes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_spikes</span></code></a>(spikes[, time_offset, duplicate])</p></td>
+<td><p>Add a time-series of spikes to this neuron.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#superneuromat.Neuron.connect_child" title="superneuromat.Neuron.connect_child"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_child</span></code></a>(child[, weight, delay, ...])</p></td>
 <td><p>Connect this neuron to a child neuron.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#superneuromat.Neuron.connect_parent" title="superneuromat.Neuron.connect_parent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_parent</span></code></a>(parent[, weight, delay, ...])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#superneuromat.Neuron.connect_parent" title="superneuromat.Neuron.connect_parent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_parent</span></code></a>(parent[, weight, delay, ...])</p></td>
 <td><p>Connect this neuron to a parent neuron.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#superneuromat.Neuron.info" title="superneuromat.Neuron.info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">info</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#superneuromat.Neuron.info" title="superneuromat.Neuron.info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">info</span></code></a>()</p></td>
 <td><p>Returns a string containing information about this neuron.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#superneuromat.Neuron.info_row" title="superneuromat.Neuron.info_row"><code class="xref py py-obj docutils literal notranslate"><span class="pre">info_row</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#superneuromat.Neuron.info_row" title="superneuromat.Neuron.info_row"><code class="xref py py-obj docutils literal notranslate"><span class="pre">info_row</span></code></a>()</p></td>
 <td><p>Returns a string containing information about this neuron for use in a table.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#superneuromat.Neuron.spikes_str" title="superneuromat.Neuron.spikes_str"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spikes_str</span></code></a>([max_steps, use_unicode])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#superneuromat.Neuron.spikes_str" title="superneuromat.Neuron.spikes_str"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spikes_str</span></code></a>([max_steps, use_unicode])</p></td>
 <td><p>Returns a pretty string of the spikes that have been emitted by this neuron.</p></td>
 </tr>
 </tbody>
@@ -531,16 +534,55 @@ To test for equality, use <code class="docutils literal notranslate"><span class
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="superneuromat.Neuron.add_spike">
-<span class="sig-name descname"><span class="pre">add_spike</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/kenblu24/superneuromat/blob/docs-live/src/superneuromat.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#superneuromat.Neuron.add_spike" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">add_spike</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/kenblu24/superneuromat/blob/docs-live/src/superneuromat.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#superneuromat.Neuron.add_spike" title="Link to this definition">#</a></dt>
 <dd><p>Queue a spike to be sent to this Neuron.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>time</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The number of time_steps until the spike is sent.</p></li>
 <li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a><em>, </em><em>default=1.0</em>) – The value of the spike.</p></li>
+<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>default='error'</em>) – Action if a queued spike already exists at the given time step.
+Should be one of [‘error’, ‘overwrite’, ‘add’, ‘dontadd’].</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="superneuromat.Neuron.add_spikes">
+<span class="sig-name descname"><span class="pre">add_spikes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">spikes:</span> <span class="pre">list[float]</span> <span class="pre">|</span> <span class="pre">list[tuple[int,</span> <span class="pre">float]]</span> <span class="pre">|</span> <span class="pre">~numpy.ndarray[int,</span> <span class="pre">~numpy.dtype]</span> <span class="pre">|</span> <span class="pre">~numpy.ndarray[(&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">2),</span> <span class="pre">~numpy.dtype],</span> <span class="pre">time_offset:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0,</span> <span class="pre">duplicate:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">'error'</span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/kenblu24/superneuromat/blob/docs-live/src/superneuromat.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#superneuromat.Neuron.add_spikes" title="Link to this definition">#</a></dt>
+<dd><p>Add a time-series of spikes to this neuron.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spikes</strong> (<em>numpy.typing.ArrayLike</em>)</p></li>
+<li><p><strong>time_offset</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a><em>, </em><em>default=0</em>) – The number of time steps to offset the spikes by.</p></li>
+<li><p><strong>overwrite</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a><em>, </em><em>default='error'</em>) – Action if a queued spike already exists at the given time step.
+Should be one of [‘error’, ‘overwrite’, ‘add’, ‘dontadd’].</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>If the input is a list of floats, it will be interpreted as a time-series of
+spikes to be fed in, one after the other.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">neuron</span><span class="o">.</span><span class="n">add_spikes</span><span class="p">([</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
+<span class="c1"># is equivalent to</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="n">neuron</span><span class="o">.</span><span class="n">add_spike</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>However, <code class="docutils literal notranslate"><span class="pre">0.0</span></code>-valued spikes are not added unless <code class="docutils literal notranslate"><span class="pre">duplicate='overwrite'</span></code>.</p>
+<p>If you would like to send a set of spikes at particular times, you can use a list of tuples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">neuron</span><span class="o">.</span><span class="n">add_spikes</span><span class="p">([</span>
+    <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">),</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The times and values will be cast to <code class="xref py py-attr docutils literal notranslate"><span class="pre">SNN.default_dtype</span></code>.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -704,6 +746,7 @@ Otherwise fallback to ascii characters.</p></li>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#superneuromat.Neuron"><code class="docutils literal notranslate"><span class="pre">Neuron</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superneuromat.Neuron.add_spike"><code class="docutils literal notranslate"><span class="pre">Neuron.add_spike()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superneuromat.Neuron.add_spikes"><code class="docutils literal notranslate"><span class="pre">Neuron.add_spikes()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superneuromat.Neuron.connect_child"><code class="docutils literal notranslate"><span class="pre">Neuron.connect_child()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superneuromat.Neuron.connect_parent"><code class="docutils literal notranslate"><span class="pre">Neuron.connect_parent()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superneuromat.Neuron.idx"><code class="docutils literal notranslate"><span class="pre">Neuron.idx</span></code></a></li>
@@ -799,7 +842,7 @@ Otherwise fallback to ascii characters.</p></li>
 </p></div>
       
         <div class="footer-item"><p class="last-updated">
-  Last built Apr 27, 2025.
+  Last built Apr 28, 2025.
   <br/>
 </p></div>
       

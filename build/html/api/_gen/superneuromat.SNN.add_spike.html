@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e3d8e547" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=f797f871" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -62,7 +62,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Apr 27, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 28, 2025"/>
   </head>
   
   
@@ -469,7 +469,7 @@
 <h1>superneuromat.SNN.add_spike<a class="headerlink" href="#superneuromat-snn-add-spike" title="Link to this heading">#</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="superneuromat.SNN.add_spike">
-<span class="sig-prename descclassname"><span class="pre">SNN.</span></span><span class="sig-name descname"><span class="pre">add_spike</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">neuron_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="../Neuron.html#superneuromat.Neuron" title="superneuromat.accessor_classes.Neuron"><span class="pre">Neuron</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference external" href="https://github.com/kenblu24/superneuromat/blob/docs-live/src/superneuromat.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#superneuromat.SNN.add_spike" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">SNN.</span></span><span class="sig-name descname"><span class="pre">add_spike</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">neuron_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="../Neuron.html#superneuromat.Neuron" title="superneuromat.accessor_classes.Neuron"><span class="pre">Neuron</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">duplicate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'error'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference external" href="https://github.com/kenblu24/superneuromat/blob/docs-live/src/superneuromat.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#superneuromat.SNN.add_spike" title="Link to this definition">#</a></dt>
 <dd><p>Adds an external spike in the SNN</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -477,16 +477,24 @@
 <li><p><strong>time</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The time step at which the external spike is added</p></li>
 <li><p><strong>neuron_id</strong> (<a class="reference internal" href="../Neuron.html#superneuromat.Neuron" title="superneuromat.Neuron"><em>Neuron</em></a><em> | </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.13)"><em>int</em></a>) – The neuron for which the external spike is added</p></li>
 <li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><em>float</em></a>) – The value of the external spike (default: 1.0)</p></li>
+<li><p><strong>duplicate</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><em>str</em></a>) – <p>action for existing spikes on a neuron at a given time step.
+Should be one of [‘error’, ‘overwrite’, ‘add’, ‘dontadd’].</p>
+<p>if duplicate=’add’, the existing spike value is added to the new value.</p>
+</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.13)"><strong>TypeError</strong></a> – <p>if:</p>
-<ul class="simple">
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.13)"><strong>TypeError</strong></a> – <p>if:</p>
+<ul>
 <li><p>time cannot be precisely cast to int</p></li>
 <li><p>neuron_id is not a Neuron or neuron ID (int)</p></li>
 <li><p>value is not an int or float</p></li>
 </ul>
-</p>
+</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.13)"><strong>ValueError</strong></a> – if spike already exists at that neuron and timestep and duplicate=’error’,
+or if duplicate is an invalid setting.</p></li>
+</ul>
 </dd>
 </dl>
 <div class="admonition seealso">
@@ -625,7 +633,7 @@
 </p></div>
       
         <div class="footer-item"><p class="last-updated">
-  Last built Apr 27, 2025.
+  Last built Apr 28, 2025.
   <br/>
 </p></div>
       

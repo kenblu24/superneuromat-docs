@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e3d8e547" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=f797f871" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -62,7 +62,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Apr 27, 2025"/>
+    <meta name="docbuild:last-update" content="Apr 28, 2025"/>
   </head>
   
   
@@ -403,8 +403,8 @@
 to add neurons and synapses to the SNN.</p>
 <p>Then, we’ll queue a spike from neuron A to neuron B. This can be done with the <a class="reference internal" href="../api/Neuron.html#superneuromat.Neuron.add_spike" title="superneuromat.Neuron.add_spike"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Neuron.add_spike()</span></code></a> method,
 or the <a class="reference internal" href="../api/_gen/superneuromat.SNN.add_spike.html#superneuromat.SNN.add_spike" title="superneuromat.SNN.add_spike"><code class="xref py py-meth docutils literal notranslate"><span class="pre">SNN.add_spike()</span></code></a> method.</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Python</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Python</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">superneuromat</span> <span class="kn">import</span> <span class="n">SNN</span>
 
 <span class="n">snn</span> <span class="o">=</span> <span class="n">SNN</span><span class="p">()</span>
@@ -427,8 +427,8 @@ During simulation, the input spikes we queued up are sent to the neurons.
 Here, we sent a spike of value <cite>1.0</cite> to neuron <code class="docutils literal notranslate"><span class="pre">a</span></code>. The <code class="docutils literal notranslate"><span class="pre">time</span></code> parameter of <a class="reference internal" href="../api/Neuron.html#superneuromat.Neuron.add_spike" title="superneuromat.Neuron.add_spike"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Neuron.add_spike()</span></code></a> is the
 number of time steps to wait before sending the spike, so it is sent <em>after</em> the <em>first</em> time step.</p>
 <p>We can see that <code class="docutils literal notranslate"><span class="pre">print(snn.neurons)</span></code> shows us the state of the neurons:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Result</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Result</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Neuron<span class="w"> </span>Info<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="o">)</span>:
 idx<span class="w">         </span>state<span class="w">          </span>thresh<span class="w">         </span>leak<span class="w">  </span>ref<span class="w"> </span>per<span class="w">       </span>spikes
 <span class="w">  </span><span class="m">0</span><span class="w">             </span><span class="m">1</span><span class="w">               </span><span class="m">1</span><span class="w">            </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">       </span><span class="o">[</span>--<span class="o">]</span>
@@ -442,8 +442,8 @@ you should see that neuron <code class="docutils literal notranslate"><span clas
 <section id="integrate-and-fire">
 <h2>Integrate and Fire<a class="headerlink" href="#integrate-and-fire" title="Link to this heading">#</a></h2>
 <p>Let’s add another spike to neuron <code class="docutils literal notranslate"><span class="pre">a</span></code>:</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Python</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Python</span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">add_spike</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
 
 <span class="n">snn</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -453,8 +453,8 @@ you should see that neuron <code class="docutils literal notranslate"><span clas
 </div>
 </div>
 <p>You should see something like this:</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Result</span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Result</span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>SNN<span class="w"> </span>with<span class="w"> </span><span class="m">2</span><span class="w"> </span>neurons<span class="w"> </span>and<span class="w"> </span><span class="m">1</span><span class="w"> </span>synapses<span class="w"> </span>@<span class="w"> </span>0x1e000f00ba4
 STDP<span class="w"> </span>is<span class="w"> </span>globally<span class="w">  </span>enabled<span class="w"> </span>with<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="nb">time</span><span class="w"> </span>steps
 apos:<span class="w"> </span><span class="o">[]</span>
@@ -500,6 +500,12 @@ the synapse and is sent to neuron <code class="docutils literal notranslate"><sp
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is possible to send a spike to a neuron with any floating-point value, but
+when a neuron spikes, the value of the spike is always <cite>1.0</cite> before it gets multiplied
+by the synaptic weight.</p>
+</div>
 <p>This is the Integrate-and-Fire part of the Leaky Integrate and Fire (<strong>LIF</strong>) model, which is a heavily simplified model of how biological neurons
 operate. We’ll talk about Leak, Refractory period, and Reset states later. For now, let’s move on to the STDP part of the model.</p>
 </section>
@@ -520,8 +526,8 @@ This is a simplified version of <a class="reference external" href="https://en.w
 often referred to by the adage, “Neurons that fire together, wire together.”</p>
 <p>To use STDP, you need to set the amount that the synaptic weight should change if
 neurons fire at the same time. This is done with the <code class="xref py py-attr docutils literal notranslate"><span class="pre">apos</span></code> attribute.</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">Python</span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Python</span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">superneuromat</span> <span class="kn">import</span> <span class="n">SNN</span>
 
 <span class="n">snn</span> <span class="o">=</span> <span class="n">SNN</span><span class="p">()</span>
@@ -545,8 +551,8 @@ neurons fire at the same time. This is done with the <code class="xref py py-att
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Result</span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Result</span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Neuron<span class="w"> </span>Info<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="o">)</span>:
 idx<span class="w">         </span>state<span class="w">          </span>thresh<span class="w">         </span>leak<span class="w">  </span>ref<span class="w"> </span>per<span class="w">       </span>spikes
 <span class="w">  </span><span class="m">0</span><span class="w">             </span><span class="m">0</span><span class="w">               </span><span class="m">1</span><span class="w">            </span><span class="m">0</span><span class="w">    </span><span class="m">0</span><span class="w">   </span><span class="m">0</span><span class="w">       </span><span class="o">[</span>┴┴<span class="o">]</span>
@@ -569,8 +575,8 @@ from previous timesteps.</p>
 </div>
 <p>You can choose a different amount of positive or negative update to occur between the current timestep and
 any previous timestep:</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Python</span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Python</span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snn</span><span class="o">.</span><span class="n">add_spike</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">neuron_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
 
 <span class="n">snn</span><span class="o">.</span><span class="n">apos</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]</span>
@@ -593,6 +599,127 @@ any previous timestep:</p>
 <span class="n">snn</span><span class="o">.</span><span class="n">create_synapse</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">stdp_enabled</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># False is the default</span>
 </pre></div>
 </div>
+</section>
+<section id="encoding-recipes">
+<h2>Encoding Recipes<a class="headerlink" href="#encoding-recipes" title="Link to this heading">#</a></h2>
+<section id="rate-encoding">
+<h3>Rate Encoding<a class="headerlink" href="#rate-encoding" title="Link to this heading">#</a></h3>
+<p>One method of encoding a non-binary value is to use a rate-coded spike train.</p>
+<p>For example, if you want to encode a value of <code class="docutils literal notranslate"><span class="pre">5</span></code>, you can send a spike
+train of <code class="docutils literal notranslate"><span class="pre">[1.0,</span> <span class="pre">1.0,</span> <span class="pre">1.0,</span> <span class="pre">1.0,</span> <span class="pre">1.0]</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">neuron</span><span class="o">.</span><span class="n">add_spikes</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is equivalent to:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">neuron</span><span class="o">.</span><span class="n">add_spike</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">add_spikes()</span></code> (plural) method is only available on neurons.</p>
+<p>Additionally, both the <a class="reference internal" href="../api/Neuron.html#superneuromat.Neuron.add_spike" title="superneuromat.Neuron.add_spike"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Neuron.add_spike()</span></code></a> and <a class="reference internal" href="../api/_gen/superneuromat.SNN.add_spike.html#superneuromat.SNN.add_spike" title="superneuromat.SNN.add_spike"><code class="xref py py-meth docutils literal notranslate"><span class="pre">SNN.add_spike()</span></code></a> methods
+will happily send a <code class="docutils literal notranslate"><span class="pre">0.0</span></code> valued spike, <a class="reference internal" href="../api/Neuron.html#superneuromat.Neuron.add_spikes" title="superneuromat.Neuron.add_spikes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Neuron.add_spikes()</span></code></a> will ignore them.</p>
+</div>
+<p>One modification is to use randomly-distributed spikes instead of a sending all the spikes at the start
+of the encoding period. Here’s how this might be implemented to send a value between <cite>0.0</cite> and <cite>1.0</cite>
+over a period of <cite>10</cite> time steps using <a class="reference external" href="https://numpy.org/doc/stable/reference/random/generated/numpy.random.Generator.geometric.html#numpy.random.Generator.geometric" title="(in NumPy v2.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">numpy.random.Generator.geometric()</span></code></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># use system time as seed</span>
+<span class="n">vec</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">geometric</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">neuron</span><span class="o">.</span><span class="n">add_spikes</span><span class="p">(</span><span class="n">vec</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">Neuron.add_spikes()</span></code> method also allows you to send spikes after a specific number of time_steps:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">neuron</span><span class="o">.</span><span class="n">add_spikes</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">time_offset</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="first-to-spike">
+<h3>First-to-spike<a class="headerlink" href="#first-to-spike" title="Link to this heading">#</a></h3>
+<p>Let’s say the first three neurons in our network are the input neurons.</p>
+<p>In the first-to-spike encoding scheme, we want to spike each input neuron at least once,
+but we want them to fire in a specific order.</p>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Add an example of first-to-spike encoding.</p>
+</div>
+</section>
+</section>
+<section id="decoding-recipes">
+<h2>Decoding Recipes<a class="headerlink" href="#decoding-recipes" title="Link to this heading">#</a></h2>
+<section id="rate-decoding">
+<h3>Rate Decoding<a class="headerlink" href="#rate-decoding" title="Link to this heading">#</a></h3>
+<p>One method of decoding a non-binary value is to simply
+count the number of spikes that arrive at each neuron.</p>
+<p>You can use the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.sum.html#numpy.ndarray.sum" title="(in NumPy v2.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">numpy.ndarray.sum()</span></code></a> to get the number of spikes that have been
+emitted by each neuron as a vector:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snn</span><span class="o">.</span><span class="n">ispikes</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>So if your last 5 neurons are your output neurons, you can sum the spikes
+emitted by each of them to get the decoded value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snn</span><span class="o">.</span><span class="n">ispikes</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">)[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span>
+</pre></div>
+</div>
+<p>Or perhaps we only care about the last 3 timesteps:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snn</span><span class="o">.</span><span class="n">ispikes</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:,</span> <span class="o">-</span><span class="mi">5</span><span class="p">:]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>While we’re here, <a class="reference internal" href="../api/_gen/superneuromat.SNN.ispikes.html#superneuromat.SNN.ispikes" title="superneuromat.SNN.ispikes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">SNN.ispikes()</span></code></a> is a <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> of the number of spikes,
+so it’s useful for other things:</p>
+<p>Get the index of the neuron that emitted the most spikes in the SNN:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snn</span><span class="o">.</span><span class="n">ispikes</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Get the number of spikes emitted per timestep:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snn</span><span class="o">.</span><span class="n">ispikes</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Get the total number of spikes emitted:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">snn</span><span class="o">.</span><span class="n">ispikes</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="first-to-spike-decoding">
+<h3>First-to-spike Decoding<a class="headerlink" href="#first-to-spike-decoding" title="Link to this heading">#</a></h3>
+<p>Another method of decoding a non-binary value is to use the first-to-spike decoding scheme.</p>
+<p>This is a population coding scheme, where each neuron is associated with a value. The
+first neuron to spike in the population is the output of the network.</p>
+<p>Let’s say the last three neurons in our network are the output neurons.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">order</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">decoding_start</span><span class="p">,</span> <span class="n">decoding_end</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">neuron</span> <span class="ow">in</span> <span class="n">snn</span><span class="o">.</span><span class="n">neurons</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]:</span>
+        <span class="k">if</span> <span class="n">neuron</span><span class="o">.</span><span class="n">spikes</span><span class="p">[</span><span class="n">time</span><span class="p">]:</span>
+            <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neuron</span><span class="o">.</span><span class="n">idx</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The first element, <code class="docutils literal notranslate"><span class="pre">order[0]</span></code>, is the index of the neuron that emitted the first spike.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>In this encoding scheme, multiple neurons might have spiked at the same time.
+The above code will return the lowest-indexed neuron of them.</p>
+<p>It is also possible that no neuron has spiked and <code class="docutils literal notranslate"><span class="pre">order</span></code> will be empty.</p>
+<p>You need to decide for yourself how you want to handle these possibilities.</p>
+</div>
+</section>
+<section id="reading-out-other-information">
+<h3>Reading out other information<a class="headerlink" href="#reading-out-other-information" title="Link to this heading">#</a></h3>
+<p>You can also read out other information on a neuron-by-neuron basis
+to see what they are after the simulation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">neuron</span> <span class="ow">in</span> <span class="n">snn</span><span class="o">.</span><span class="n">neurons</span><span class="p">:</span>
+    <span class="n">neuron</span><span class="o">.</span><span class="n">idx</span>  <span class="c1"># the index of the neuron</span>
+    <span class="n">neuron</span><span class="o">.</span><span class="n">state</span>  <span class="c1"># the charge level of the neuron</span>
+    <span class="n">neuron</span><span class="o">.</span><span class="n">weight</span>  <span class="c1"># the weight of the synapse connecting the neuron to the output neuron</span>
+</pre></div>
+</div>
+<p>You can see what is available by looking at the <a class="reference internal" href="../api/Neuron.html#superneuromat.Neuron" title="superneuromat.Neuron"><code class="xref py py-class docutils literal notranslate"><span class="pre">Neuron</span></code></a> class.</p>
+<p>If you’d like to print out information about the network, there are many methods
+to help you visualize things.</p>
+<p>If you’re interested in just a single neuron or synapse, the classes <a class="reference internal" href="../api/Neuron.html#superneuromat.Neuron" title="superneuromat.Neuron"><code class="xref py py-class docutils literal notranslate"><span class="pre">Neuron</span></code></a> and <a class="reference internal" href="../api/Synapse.html#superneuromat.Synapse" title="superneuromat.Synapse"><code class="xref py py-class docutils literal notranslate"><span class="pre">Synapse</span></code></a>
+have methods to print out information about them.</p>
+<p>If you’re looking for information about the entire network,
+see the many methods of the <a class="reference internal" href="../api/SNN.html#superneuromat.SNN" title="superneuromat.SNN"><code class="xref py py-class docutils literal notranslate"><span class="pre">SNN</span></code></a> class in <a class="reference internal" href="../api/SNN.html#inspecting-the-snn"><span class="std std-ref">Inspecting the SNN</span></a>.</p>
+</section>
 </section>
 </section>
 
@@ -646,6 +773,17 @@ any previous timestep:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-neuromorphic-model">Creating a neuromorphic model</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrate-and-fire">Integrate and Fire</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-with-stdp">Learning with STDP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encoding-recipes">Encoding Recipes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-encoding">Rate Encoding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-to-spike">First-to-spike</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decoding-recipes">Decoding Recipes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rate-decoding">Rate Decoding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-to-spike-decoding">First-to-spike Decoding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-out-other-information">Reading out other information</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -726,7 +864,7 @@ any previous timestep:</p>
 </p></div>
       
         <div class="footer-item"><p class="last-updated">
-  Last built Apr 27, 2025.
+  Last built Apr 28, 2025.
   <br/>
 </p></div>
       
