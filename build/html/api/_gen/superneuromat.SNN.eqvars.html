@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=f797f871" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=2b4886fe" />
   
   <!-- So that users can add custom icons -->
   <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -57,12 +57,12 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/_gen/superneuromat.SNN.eqvars';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="superneuromat.SNN.is_sparse" href="superneuromat.SNN.is_sparse.html" />
+    <link rel="next" title="superneuromat.SNN._internal_vars" href="superneuromat.SNN._internal_vars.html" />
     <link rel="prev" title="superneuromat.SNN.disable_performance_warnings" href="superneuromat.SNN.disable_performance_warnings.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Apr 28, 2025"/>
+    <meta name="docbuild:last-update" content="May 01, 2025"/>
   </head>
   
   
@@ -386,6 +386,7 @@
 <li class="toctree-l2"><a class="reference internal" href="superneuromat.SNN.backend.html">superneuromat.SNN.backend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="superneuromat.SNN.disable_performance_warnings.html">superneuromat.SNN.disable_performance_warnings</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">superneuromat.SNN.eqvars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="superneuromat.SNN._internal_vars.html">superneuromat.SNN._internal_vars</a></li>
 <li class="toctree-l2"><a class="reference internal" href="superneuromat.SNN.is_sparse.html">superneuromat.SNN.is_sparse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="superneuromat.SNN.sparse.html">superneuromat.SNN.sparse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="superneuromat.SNN.stdp_time_steps.html">superneuromat.SNN.stdp_time_steps</a></li>
@@ -471,6 +472,10 @@
 <dt class="sig sig-object py" id="superneuromat.SNN.eqvars">
 <span class="sig-prename descclassname"><span class="pre">SNN.</span></span><span class="sig-name descname"><span class="pre">eqvars</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['num_neurons',</span> <span class="pre">'num_synapses',</span> <span class="pre">'neuron_leaks',</span> <span class="pre">'neuron_states',</span> <span class="pre">'neuron_thresholds',</span> <span class="pre">'neuron_reset_states',</span> <span class="pre">'neuron_refractory_periods',</span> <span class="pre">'neuron_refractory_periods_state',</span> <span class="pre">'pre_synaptic_neuron_ids',</span> <span class="pre">'post_synaptic_neuron_ids',</span> <span class="pre">'synaptic_weights',</span> <span class="pre">'synaptic_delays',</span> <span class="pre">'default_dtype',</span> <span class="pre">'enable_stdp',</span> <span class="pre">'spike_train',</span> <span class="pre">'input_spikes',</span> <span class="pre">'stdp',</span> <span class="pre">'apos',</span> <span class="pre">'aneg',</span> <span class="pre">'stdp_positive_update',</span> <span class="pre">'stdp_negative_update',</span> <span class="pre">'_sparse',</span> <span class="pre">'_backend',</span> <span class="pre">'manual_setup']</span></em><a class="reference external" href="https://github.com/kenblu24/superneuromat/blob/docs-live/src/superneuromat.py"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#superneuromat.SNN.eqvars" title="Link to this definition">#</a></dt>
 <dd><p>The list of public variables which define the SNN model.</p>
+<p>For equality comparisons (<code class="xref py py-meth docutils literal notranslate"><span class="pre">SNN.__eq__()</span></code>) between two SNNs,
+this list is used to check that variables within the SNN are equal.</p>
+<p>For memoization (<a class="reference internal" href="superneuromat.SNN.memoize.html#superneuromat.SNN.memoize" title="superneuromat.SNN.memoize"><code class="xref py py-meth docutils literal notranslate"><span class="pre">SNN.memoize()</span></code></a>), this list gives the
+names of variables which can be memoized.</p>
 </dd></dl>
 
 </section>
@@ -495,11 +500,11 @@
       </div>
     </a>
     <a class="right-next"
-       href="superneuromat.SNN.is_sparse.html"
+       href="superneuromat.SNN._internal_vars.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">superneuromat.SNN.is_sparse</p>
+        <p class="prev-next-title">superneuromat.SNN._internal_vars</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -603,7 +608,7 @@
 </p></div>
       
         <div class="footer-item"><p class="last-updated">
-  Last built Apr 28, 2025.
+  Last built May 01, 2025.
   <br/>
 </p></div>
       

@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=f797f871" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=2b4886fe" />
   
   <!-- So that users can add custom icons -->
   <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
@@ -62,7 +62,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="Apr 28, 2025"/>
+    <meta name="docbuild:last-update" content="May 01, 2025"/>
   </head>
   
   
@@ -386,6 +386,7 @@
 <li class="toctree-l2"><a class="reference internal" href="_gen/superneuromat.SNN.backend.html">superneuromat.SNN.backend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="_gen/superneuromat.SNN.disable_performance_warnings.html">superneuromat.SNN.disable_performance_warnings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="_gen/superneuromat.SNN.eqvars.html">superneuromat.SNN.eqvars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_gen/superneuromat.SNN._internal_vars.html">superneuromat.SNN._internal_vars</a></li>
 <li class="toctree-l2"><a class="reference internal" href="_gen/superneuromat.SNN.is_sparse.html">superneuromat.SNN.is_sparse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="_gen/superneuromat.SNN.sparse.html">superneuromat.SNN.sparse</a></li>
 <li class="toctree-l2"><a class="reference internal" href="_gen/superneuromat.SNN.stdp_time_steps.html">superneuromat.SNN.stdp_time_steps</a></li>
@@ -771,22 +772,25 @@ or agent-based SNN simulators in networks with high delay times.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="_gen/superneuromat.SNN.eqvars.html#superneuromat.SNN.eqvars" title="superneuromat.SNN.eqvars"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eqvars</span></code></a></p></td>
 <td><p>The list of public variables which define the SNN model.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="_gen/superneuromat.SNN.is_sparse.html#superneuromat.SNN.is_sparse" title="superneuromat.SNN.is_sparse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_sparse</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_gen/superneuromat.SNN._internal_vars.html#superneuromat.SNN._internal_vars" title="superneuromat.SNN._internal_vars"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_internal_vars</span></code></a></p></td>
+<td><p>NumPy representation of the internal state variables used during simulation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_gen/superneuromat.SNN.is_sparse.html#superneuromat.SNN.is_sparse" title="superneuromat.SNN.is_sparse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_sparse</span></code></a></p></td>
 <td><p>Returns True if SNN is sparse internally.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="_gen/superneuromat.SNN.sparse.html#superneuromat.SNN.sparse" title="superneuromat.SNN.sparse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparse</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_gen/superneuromat.SNN.sparse.html#superneuromat.SNN.sparse" title="superneuromat.SNN.sparse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparse</span></code></a></p></td>
 <td><p>Returns True if either user has requested sparse, or if SNN is sparse internally.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="_gen/superneuromat.SNN.stdp_time_steps.html#superneuromat.SNN.stdp_time_steps" title="superneuromat.SNN.stdp_time_steps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stdp_time_steps</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="_gen/superneuromat.SNN.stdp_time_steps.html#superneuromat.SNN.stdp_time_steps" title="superneuromat.SNN.stdp_time_steps"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stdp_time_steps</span></code></a></p></td>
 <td><p>Returns the number of time steps over which STDP updates will be made.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="_gen/superneuromat.SNN.jit_threshold.html#superneuromat.SNN.jit_threshold" title="superneuromat.SNN.jit_threshold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jit_threshold</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_gen/superneuromat.SNN.jit_threshold.html#superneuromat.SNN.jit_threshold" title="superneuromat.SNN.jit_threshold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jit_threshold</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="_gen/superneuromat.SNN.gpu_threshold.html#superneuromat.SNN.gpu_threshold" title="superneuromat.SNN.gpu_threshold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gpu_threshold</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="_gen/superneuromat.SNN.gpu_threshold.html#superneuromat.SNN.gpu_threshold" title="superneuromat.SNN.gpu_threshold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gpu_threshold</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="_gen/superneuromat.SNN.sparsity_threshold.html#superneuromat.SNN.sparsity_threshold" title="superneuromat.SNN.sparsity_threshold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparsity_threshold</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_gen/superneuromat.SNN.sparsity_threshold.html#superneuromat.SNN.sparsity_threshold" title="superneuromat.SNN.sparsity_threshold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sparsity_threshold</span></code></a></p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -930,7 +934,7 @@ or agent-based SNN simulators in networks with high delay times.</p>
 </p></div>
       
         <div class="footer-item"><p class="last-updated">
-  Last built Apr 28, 2025.
+  Last built May 01, 2025.
   <br/>
 </p></div>
       

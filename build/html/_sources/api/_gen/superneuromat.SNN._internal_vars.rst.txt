@@ -1,0 +1,6 @@
+﻿superneuromat.SNN.\_internal\_vars
+==================================
+
+.. currentmodule:: superneuromat
+
+.. autoattribute:: SNN._internal_vars
